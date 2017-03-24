@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				
+}
+
+img {				
+    border: 0;
+    vertical-align: middle;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; 
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+s, i, em {				
+    font-style: normal;
+    text-decoration: none;
+}
+
+body {
+	font: 14px/1.5 "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    color: #87968e;
+	text-align: center;
+	background-color: #fff2e3;
+}
+.wrap {
+	width: 800px;
+	margin: 0 auto;
+}
+header p:first-child {
+	font-weight: 900;
+	font-size: 42px;
+}
+header p:nth-of-type(2) {
+	opacity: 0.8;
+}
+header .project-btn {
+	margin: 25px 0;
+}
+header li {
+	display: inline-block;
+}
+header a {
+	display: inline-block;
+	padding: 5px 15px;
+	margin-right: 10px;
+	background-color: #72b890;
+	color: #fff;
+}
+header a:hover {
+	opacity: 0.8;
+	color: #fff;
+}
+header li:first-child {
+	opacity: 0.5;
+}
+section .menu-btn {
+	margin: 20px;
+}
+.menu-btn li {
+	display: inline-block;
+}
+.menu-btn a {
+	display: inline-block;
+	padding: 5px 25px;
+	margin-right: 10px;
+	background-color: #72b890;
+	color: #fff;
+}
+.menu-btn a:hover {
+	opacity: 0.8;
+	color: #fff;
+}
