@@ -45,7 +45,7 @@ s, i, em {
 }
 
 body {
-	font: 12px/1.5 "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+	font: 14px/1.5 "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
     color: #000;
 	background-color: #fff;
 }
@@ -60,7 +60,7 @@ body {
 }
 .name {
 	float: left;
-	width: 390px;
+	width: 330px;
 }
 .contact img {
 	float: left;
@@ -79,14 +79,63 @@ body {
 }
 .contact p:nth-of-type(2) {
 	margin: 0;
-	font-size: 14px;
+	/* font-size: 14px; */
 }
-.information {
+.contact ul {
 	float: right;
-	width: 195px;
+	width: 250px;
 }
-.information .heading {
+.contact .heading {
 	border-bottom: 3px solid #000;
 	font-size: 16px;
 	font-weight: bold;
+}
+.work-experience ul,
+.education ul {
+	position: relative;
+	list-style: disc;
+	padding-left: 15px;
+}
+.work-experience ul::before,
+.education ul::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 12px;
+	left: 1px;
+	width: 2px;
+	height: 377px;
+	background-color: #000;
+
+}
+.Paragraph-title
+ {
+	width: 300px;
+	border-bottom: 1px solid #000;
+	font-size: 20px;
+	font-weight: bold;
+}
+.work-experience h5,
+.education h5 {
+	font-size: 16px;
+}
+.extra-curricular-activities {
+	float: left;
+	width: 50%;
+}
+.extra-curricular-activities .Paragraph-title,
+.professional-skills .Paragraph-title {
+	width: 100%;
+	font-size: 16px;
+}
+.professional-skills {
+	float: right;
+	width: 50%;
+}
+.professional-skills li {
+	float: left;
+	width: 50%;
+	height: 80px;
+	margin-top: 20px;
+	text-align: center;
 }
