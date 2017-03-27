@@ -1,0 +1,29 @@
+
+@font-face {font-family: "iconfont-three";
+  src: url('iconfont.eot?t=1490605665928'); /* IE9*/
+  src: url('iconfont.eot?t=1490605665928#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1490605665928') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1490605665928') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1490605665928#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.icon {
+  font-family:"iconfont-three" !important;
+  font-size:68px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-params:before { content: "\e8f4"; }
+
+.icon-185059handlestreamlinevector:before { content: "\e627"; }
+
+.icon-185081speechstreamlinetalkuser:before { content: "\e646"; }
+
+.icon-dengpao:before { content: "\e63d"; }
+
+.icon-aixin1:before { content: "\e7cf"; }
+
+.icon-chilun:before { content: "\e60d"; }
+
