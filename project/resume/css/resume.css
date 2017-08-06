@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				
+}
+
+img {				
+    border: 0;
+    vertical-align: middle;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; 
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+s, i, em {				
+    font-style: normal;
+    text-decoration: none;
+}
+
+body {
+	font: 14px/1.5 "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    color: #000;
+	background-color: #fff;
+}
+
+.wrap {
+	width: 600px;
+	margin: 0 auto;
+}
+.contact {
+	height: 158px;
+	padding: 49px 0 0 10px;
+}
+.name {
+	float: left;
+	width: 330px;
+}
+.contact img {
+	float: left;
+	width: 102px;
+	height: 102px;
+}
+.contact .name-position {
+	float: left;
+	padding: 20px 0 0 50px;
+}
+.contact p:first-child {
+	margin: 0;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 10px;
+}
+.contact p:nth-of-type(2) {
+	margin: 0;
+	/* font-size: 14px; */
+}
+.contact ul {
+	float: right;
+	width: 250px;
+}
+.contact .heading {
+	border-bottom: 3px solid #000;
+	font-size: 16px;
+	font-weight: bold;
+}
+.work-experience ul,
+.education ul {
+	position: relative;
+	list-style: disc;
+	padding-left: 15px;
+}
+.work-experience ul::before,
+.education ul::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 12px;
+	left: 1px;
+	width: 2px;
+	height: 377px;
+	background-color: #000;
+
+}
+.Paragraph-title
+ {
+	width: 300px;
+	border-bottom: 1px solid #000;
+	font-size: 20px;
+	font-weight: bold;
+}
+.work-experience h5,
+.education h5 {
+	font-size: 16px;
+}
+.extra-curricular-activities {
+	float: left;
+	width: 50%;
+}
+.extra-curricular-activities .Paragraph-title,
+.professional-skills .Paragraph-title {
+	width: 100%;
+	font-size: 16px;
+}
+.professional-skills {
+	float: right;
+	width: 50%;
+}
+.professional-skills li {
+	float: left;
+	width: 50%;
+	height: 80px;
+	margin-top: 20px;
+	text-align: center;
+}

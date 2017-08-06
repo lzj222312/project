@@ -1,0 +1,16 @@
+{
+  "name": "company-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "uglify-js": "^3.0.11",
+    "webpack": "^2.6.0"
+  }
+}
