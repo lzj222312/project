@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script src="./src/lib/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <!--加载效果-->
+        <div id="loading">
+            <div class="content1">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round3"></div>
+                <div class="round4"></div>
+            </div>
+            <div class="content2">
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round3"></div>
+                <div class="round4"></div>
+            </div>
+        </div>
+
+        <!--音乐播放列表-->
+        <div id="music-list">
+            <div class="music-title">
+                音乐播放器
+                <span class="title-tip"></span>
+            </div>
+            <div class="music-content">
+                <ul class="content-ul">
+                    <!--<li class="content-ul-list active">
+                        <h3 class="title">逆战</h3>
+                        <p class="name">张杰</p>
+                    </li>-->
+                </ul>
+            </div>
+            <div class="audio">
+                <img class="audio-img" src="./img/miaov.jpg" alt="妙味">
+                <div class="audio-text">
+                    <h3 class="title">妙味课堂</h3>
+                    <p class="name">音乐播放器</p>
+                </div>
+                <div class="audio-btn"></div>
+            </div>
+        </div>
+
+        <!--音乐详情页-->
+        <div id="musicdetails">
+            <div class="details-title">
+                <div class="details-name">逆战<span>张杰</span></div>
+                <span class="detaols-tip"></span>
+            </div>
+            <div class="details-lyric">
+                <ul id='detailsLyricUl' class='details-lyric-ul'>
+                    <!--<li>测试歌词</li>
+                    <li>测试歌词</li>
+                    <li>测试歌词</li>
+                    <li>测试歌词</li>-->
+                </ul>
+            </div>
+            <div class="details-audio">
+                <div class="details-audioAll">
+                    <div class="details-audioPro">
+                        <div id='detailsAudioProUp' class="details-audioProUp"></div>
+                        <div id='detailsAudioProBar' class="details-audioProBar"></div>
+                    </div>
+                    <div id='detailsNowTime' class="details-nowTime">00:00</div>
+                    <div id='detailsAllTime' class="details-allTime">00:00</div>
+                    <div class="details-play"></div>
+                    <div id='detailsPrev' class="details-prev"></div>
+                    <div id='detailsNext' class="details-next"></div>
+                </div>
+                <ul class="details-btn">
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="detailsMessage" class="details-message">
+                    <textarea id="detailsMessageTextarea" placeholder="文明上网，理性留言"></textarea>
+                    <input id="detailsMessageBtn" type="button" value="发表">
+                    <ul id="detailsMessageUl">
+                        <!--<li>留言测试</li>
+                        <li>留言测试</li>
+                        <li>留言测试</li>-->
+                    </ul>
+            </div>
+        </div>
+        <audio id="loadAudio"></audio>   
+    </div>
+    <script src="./src/js/index.js"></script>
+</body>
+</html>
