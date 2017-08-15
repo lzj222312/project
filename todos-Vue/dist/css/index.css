@@ -1,0 +1,135 @@
+html, body, ul, li, ol, dl, dd, dt, form, fieldset, legend, img {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset, img, input, button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline-style: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+body .header h3, body .main {
+  margin: 0 auto;
+}
+
+body .header {
+  height: 40px;
+  background-color: #db4c3f;
+}
+
+body .header h3 {
+  width: 50%;
+  line-height: 40px;
+  color: #fff;
+}
+
+body .main {
+  width: 50%;
+}
+
+body .main .task-input {
+  width: 99%;
+  height: 30px;
+  outline: 0;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+}
+
+body .main ul {
+  padding: 0 5px;
+  margin: 10px 0;
+}
+
+body .main ul li.active {
+  border: 1px solid rgba(175, 47, 47, 0.2);
+}
+
+body .main ul .label-left {
+  float: left;
+  font-size: 13px;
+  line-height: 23px;
+  color: #dd4b39;
+}
+
+body .main ul .label-right {
+  float: right;
+  margin: 0 10px;
+  padding: 0 5px;
+}
+
+body .main .task-list .todo {
+  position: relative;
+  border-bottom: 1px solid #ededed;
+}
+
+body .main .task-list .todo .toggle {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 5px;
+  margin: auto 0;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+body .main .task-list .todo .toggle::after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+body .main .task-list .todo .toggle:checked::after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+body .main .task-list .todo label {
+  white-space: pre-line;
+  word-break: break-all;
+  padding: 15px 60px 15px 15px;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+}
+
+body .main .task-list .todo .destroy {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  font-size: 30px;
+  color: #cc9a9a;
+}
+
+body .main .task-list .todo .destroy::after {
+  content: "x";
+}

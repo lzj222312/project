@@ -1,0 +1,95 @@
+@import "global";
+
+// 变量设置
+$border: 1px solid;
+$border-color: #ccc #ededed rgba(175,47,47,0.2);
+$padding: 0 5px;
+$color: #dd4b39 #cc9a9a;
+
+body{
+    %centered {
+        margin: 0 auto;
+    }
+    .header{
+        height: 40px;
+        background-color: #db4c3f;
+        h3 {
+            width: 50%;   
+            line-height: 40px;
+            color: #fff;
+            @extend %centered;
+        }
+    }
+    .main {
+        width: 50%;
+        @extend %centered;
+        .task-input {
+            width: 99%;
+            height: 30px;
+            outline:0;
+            border: $border nth($border-color,1);
+            padding: $padding;
+        }
+        ul{
+            padding: $padding;
+            li.active {
+                border: $border nth($border-color,3);
+            }
+            margin: 10px 0;
+            .label-left {
+                float:left;
+                font-size: 13px;
+                line-height: 23px;
+                color: nth($color,1);
+            }
+            .label-right {
+                float:right;
+                margin: 0 10px;
+                padding:$padding;
+            }
+        }
+        .task-list {
+            .todo {
+                position: relative;
+                border-bottom: 1px solid nth($border-color,2);
+                .toggle {
+                    width: 40px;
+                    height: auto;
+                    position: absolute;
+                    top: 5px;
+                    margin: auto 0;
+                    border: 0;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    &::after {
+                        content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+                    }
+                    &:checked::after {
+                        content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+                    }
+                }
+                label {
+                    white-space: pre-line;
+                    word-break: break-all;
+                    padding: 15px 60px 15px 15px;
+                    margin-left: 45px;
+                    display: block;
+                    line-height: 1.2;
+                }
+                .destroy {
+                    position: absolute;
+                    top: 5px;
+                    right: 10px;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                    font-size: 30px;
+                    color: nth($color,2);  
+                    &::after{
+                        content:"x";
+                    }
+                }
+            }
+        }
+    }
+}

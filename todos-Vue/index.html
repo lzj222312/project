@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue-Todos</title>
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <script src="./src/lib/vue.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h3>任务计划列表</h3>
+        </div>
+    </header>
+    <section>
+        <div class="main">
+            <h4>添加任务 :</h4>
+            <input class="task-input" type="text" placeholder="例如：吃饭睡觉打豆豆；    提示：+回车即可添加任务">
+            <ul class="clearfix">
+                <li class="label-left"><span>1个任务未完成</span></li>
+                <li class="label-right"><a href="javascript:void(0)">完成任务</a></li>
+                <li class="label-right"><a href="javascript:void(0)">未完成任务</a></li>
+                <li class="label-right active"><a href="javascript:void(0)">所有任务</a></li>
+            </ul>
+            <div class="task-list">
+                <h4>任务列表 :</h4>
+                <ul>
+                    <li class="todo">
+                        <div>
+                            <input type="checkbox" class="toggle">
+                            <label>吃饭打豆豆</label>
+                            <button class="destroy"></button> 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
