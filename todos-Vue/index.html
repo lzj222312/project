@@ -17,26 +17,42 @@
     <section>
         <div class="main">
             <h4>添加任务 :</h4>
-            <input class="task-input" type="text" placeholder="例如：吃饭睡觉打豆豆；    提示：+回车即可添加任务">
-            <ul class="clearfix">
-                <li class="label-left"><span>1个任务未完成</span></li>
-                <li class="label-right"><a href="javascript:void(0)">完成任务</a></li>
-                <li class="label-right"><a href="javascript:void(0)">未完成任务</a></li>
-                <li class="label-right active"><a href="javascript:void(0)">所有任务</a></li>
+            <input class="task-input" 
+                   type="text" 
+                   placeholder="例如：吃饭睡觉打豆豆；    提示：+回车即可添加任务"
+                   v-model="todo"
+                   @keyup.13="addTodo"    
+            />
+            <ul class="clearfix" v-show="list.length">
+                <li class="label-left"><span>{{ noCheckedLength }}个任务未完成</span></li>
+                <li class="label-right" :class="{'active':localHash === 'finished'}"><a href="#finished">完成任务</a></li>
+                <li class="label-right" :class="{'active':localHash === 'unfinished'}"><a href="#unfinished">未完成任务</a></li>
+                <li class="label-right" :class="{'active':localHash === 'all'}"><a href="#all">所有任务</a></li>
             </ul>
             <div class="task-list">
                 <h4>任务列表 :</h4>
                 <ul>
-                    <li class="todo">
-                        <div>
-                            <input type="checkbox" class="toggle">
-                            <label>吃饭打豆豆</label>
-                            <button class="destroy"></button> 
-                        </div>
-                    </li>
+                    <template v-for="item,index in filterList">
+                        <li class="todo" :class="{'complated':item.isChecked,'editing':item === edtorTodo}">
+                            <div class="view">
+                                <input type="checkbox" class="toggle" v-model="item.isChecked">
+                                <label @dblclick="editTodo(item)">{{ item.title }}</label>
+                                <button class="destroy" @click="delTodo(index)"></button> 
+                            </div>
+                            <input type="text"
+                                   class="edit"
+                                   v-model="item.title"
+                                   v-focus="edtorTodo === item"
+                                   @blur="complatedTodo"
+                                   @keyup.13="complatedTodo"
+                                   @keyup.esc='cancelTodo(item)'
+                            />
+                        </li>
+                    </template>
                 </ul>
             </div>
         </div>
     </section>
+    <script src="./dist/js/index.js"></script>
 </body>
 </html>

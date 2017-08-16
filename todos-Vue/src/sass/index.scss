@@ -2,9 +2,9 @@
 
 // 变量设置
 $border: 1px solid;
-$border-color: #ccc #ededed rgba(175,47,47,0.2);
+$border-color: #ccc #ededed rgba(175,47,47,0.2) #fafafa;
 $padding: 0 5px;
-$color: #dd4b39 #cc9a9a;
+$color: #dd4b39 #cc9a9a #d9d9d9;
 
 body{
     %centered {
@@ -52,6 +52,15 @@ body{
             .todo {
                 position: relative;
                 border-bottom: 1px solid nth($border-color,2);
+                &:hover {
+                    background-color: nth($border-color,4);
+                }
+                &:hover .destroy {
+                    display: block;
+                }
+                &.editing .view {
+                    display: none;
+                }
                 .toggle {
                     width: 40px;
                     height: auto;
@@ -76,18 +85,38 @@ body{
                     display: block;
                     line-height: 1.2;
                 }
+                &.complated label {
+                    color: nth($color,3);
+                    text-decoration: line-through;
+                }
                 .destroy {
+                    display: none;
                     position: absolute;
                     top: 5px;
                     right: 10px;
                     width: 40px;
                     height: 40px;
-                    background-color: #fff;
-                    font-size: 30px;
-                    color: nth($color,2);  
+                    background-color: nth($border-color,4);
+                    font-size: 20px;
+                    color: nth($color,2);
+                    transition: all 0.3s ease-out;  
                     &::after{
                         content:"x";
                     }
+                    &:hover {
+                        color: #af5b5e;
+                    }
+                }
+                .edit {
+                    display: none;
+                }
+                &.editing .edit {
+                    display: block;
+                    width: 85%;
+                    padding: 13px 17px 12px 17px;
+                    margin: 0 0 0 45px;
+                    border-left: $border nth($border-color,2);
+                    border-right: none;
                 }
             }
         }
