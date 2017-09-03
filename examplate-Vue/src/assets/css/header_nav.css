@@ -1,0 +1,113 @@
+html, body, ul, li, ol, dl, dd, dt, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;				
+}
+s, i, em {				
+    font-style: normal;
+    text-decoration: none;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 404173 */
+  src: url('//at.alicdn.com/t/font_404173_9vek3s7ee8livn29.eot');
+  src: url('//at.alicdn.com/t/font_404173_9vek3s7ee8livn29.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_404173_9vek3s7ee8livn29.woff') format('woff'),
+  url('//at.alicdn.com/t/font_404173_9vek3s7ee8livn29.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_404173_9vek3s7ee8livn29.svg#iconfont') format('svg');
+}
+
+.icon-wodexiangmu:before { content: "\e626"; }
+
+.icon-wendang:before { content: "\e61f"; }
+
+.icon-gongzuotai:before { content: "\e627"; }
+
+[class^='icon-'],[class*=' icon-'] {
+	font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-nav {
+	background-color: #324157;
+	height: 66px;
+}
+ .header-nav::before,.header-nav::after {
+	content: '';
+	display: block;
+}
+.header-nav::after {
+	clear: both;
+} 
+.header-nav li {
+	float: left;
+	padding: 1rem 2rem;
+	height: 66px;
+	font-size: 14px;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.header-nav li + li {	
+	padding-top: 1.5rem; 
+	color: #fff;
+}
+.header-nav li + li:hover {
+	box-sizing: border-box;
+	border-bottom: 4px solid #20a0ff; 
+	color: #20a0ff
+}
+.header-nav .logo > img {
+	vertical-align: middle;
+}
+.login-info {
+	position: absolute;
+	right: 25px;
+	top: 0;
+	width: 100px;
+	text-align: center;
+	padding: 15px 5px 5px 5px;
+	box-sizing: border-box;
+	transition: .2s;
+}
+.avatar img {
+	width: 30px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.avatar span {
+	font-size: 12px;
+	color: #fff;
+}
+.login-info .sign-out {
+	position: absolute;
+	top: 70px;
+	left: 0;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	opacity: 0;
+	transition: .4s;
+	cursor: pointer;
+}
+.login-info:hover {
+	background-color: rgba(255,255,255,.1);
+	box-shadow: 2px 2px 6px rgba(0,0,0,.2),3px 4px 8px rgba(0,0,0,.1);
+	height: 120px;  
+}
+.login-info:hover .sign-out {
+	opacity: 1;
+}
+.login-info .sign-out:hover {
+	background-color: rgba(0,0,0,.8);
+	box-shadow: 2px 2px 6px rgba(0,0,0,.2),3px 4px 8px rgba(0,0,0,.1);
+	color: #fff;
+}

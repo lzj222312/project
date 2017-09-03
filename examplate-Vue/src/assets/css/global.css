@@ -1,0 +1,48 @@
+/* 初始化 */
+html, body, ul, li, ol, dl, dd, dt, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;				
+}
+s, i, em {				
+    font-style: normal;
+    text-decoration: none;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+/* Management-nav active */
+.header-nav .router-link-exact-active {
+	color: #20a0ff
+}
+
+/* layout.vue */
+.breadcrumb {
+	padding: 10px 15px;
+	font-size: 12px;
+	background-color: #eee;
+	color: #888;
+}
+
+/* 页面切换动画 */
+.fade-enter {
+	opacity: 0
+}
+.fade-enter-to {
+	opacity: 1
+}
+.fade-active,.fade-leave-active {
+	transition: .5s
+}
+.fade-leave {
+	opacity: 1
+}
+.fade-leave-to {
+	opacity: 0
+}
+

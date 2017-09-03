@@ -1,0 +1,50 @@
+#app > .main {
+    padding: 2rem 10rem;
+}
+.main .portrait {
+	float: right;
+	position: relative;
+}
+.portrait > img {
+	width: 30px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.main .login {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 50px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #000;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	color: #fff;
+	cursor: pointer;
+}
+.main .phrase{
+	margin-top: 5rem;
+	font-size: 50px;
+	text-align: center;
+}
+.main .project-btn {
+	margin-top: 5rem;
+	text-align: center;
+}
+.project-btn .trans {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	background-color: #13ce66;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 22px;
+	color: #fff;
+	cursor: pointer;
+}
+.project-btn .trans + .trans {
+	margin-left: 3rem;
+}

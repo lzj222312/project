@@ -1,0 +1,37 @@
+.login-box {
+	width: 450px;
+	margin: 50px auto;
+}
+.login-box h2 {
+	text-align: center;
+}
+.login-box form {
+	border: 1px solid #ccc;
+	border-bottom: none;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.2),6px 6px 10px rgba(0,0,0,.1);
+}
+.login-box input {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 15px;
+	box-sizing: border-box;
+}
+.login-box input:focus {
+	outline: none;
+}
+.login-box input[type="button"] {
+	background-color: #4db3ff
+}
+.login-box .back-home {
+	margin-top: .5rem;
+	text-align: center;
+}
+.back-home span {
+	display: inline-block;
+	width: 70px;
+	height: 40px;
+	font-size: 14px;
+	line-height: 40px;
+	cursor: pointer;
+}
