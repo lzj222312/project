@@ -1,0 +1,53 @@
+.doc {
+	position: fixed;
+	top: 102px; 
+	left: 15%;
+	right: 0;
+	bottom: 0;
+	background-color: #F9F9F9;
+	overflow-y: auto; 
+}
+
+/* 左边导航栏 */
+.doc-left-nav {
+	position: fixed;
+	top: 102px;
+	left: 0;
+	width: 15%;
+	height: 100%;
+	padding: 20px 0 0 50px;
+	box-sizing: border-box;
+	overflow-y: auto; 
+}
+.doc-left-nav .nav > li {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+.doc-left-nav .secondary-nav {
+	padding-left: 1rem;
+}
+.secondary-nav li + li{
+	margin-top: 2px;
+}
+.secondary-nav a {
+	font-size: 12px;
+	font-weight: 700; 
+	color: #000;
+}
+
+/* 右边内容栏 */
+ .doc-content {
+	position: relative;
+	padding-left: 15px;
+	font-size: 14px;
+}
+.doc-right h3 {
+	margin-bottom: 0;
+	font-size: 14px;
+}
+.doc-right div {
+	height: 500px;
+} 
+.doc-right h2,.doc-right h3,.doc-right div {
+	padding-left: 15px;
+}

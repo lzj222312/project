@@ -39,6 +39,13 @@ export default {
 	},
 	components: {
 		headerNav: Header
+		
+		//vue提供的promise异步加载组件
+		// (resolve) => {
+		// setTimeout(() => {
+		// 	resolve(require('@/components/header.vue'))
+		// },2000)
+		// }
 	}
 }
 </script>

@@ -55,7 +55,7 @@ var vm = new Vue({
             deep: true
         }
     },
-    computed: {
+    computed: { //计算属性，当计算一个计算属性时，vue更新它的依赖列表并缓存结果
         noCheckedLength: function noCheckedLength() {
             return this.list.filter(function (item) {
                 return !item.isChecked;
@@ -102,7 +102,7 @@ var vm = new Vue({
             this.edtorTodo = '';
         }
     },
-    directives: {
+    directives: { //自定义指令
         "focus": {
             update: function update(el, binding) {
                 // console.log(binding)

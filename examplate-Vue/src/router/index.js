@@ -1,11 +1,48 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home'
-import Login from '@/components/login'
-import Layout from '@/views/layout'
-import Project from '@/views/project'
-import Work from '@/views/work'
-import Doc from '@/views/doc'
+// import Home from '@/components/home'
+// import Login from '@/components/login'
+// import Layout from '@/views/layout'
+// import Project from '@/views/project'
+// import Work from '@/views/work'
+// import Doc from '@/views/doc'
+
+
+// webpack提供的代码分隔功能，实现按需加载；有两种方法
+
+// 1.import
+let Home = (resolve) => {
+	return import('@/components/home')
+}
+
+let Login = (resolve) => {
+	return import('@/components/login')
+}
+
+let Layout = (resolve) => {
+	return import('@/views/layout')
+}
+
+// 2.require.ensure 这方法接收3个参数（依赖，回调，chunk名称）
+// 		依赖为字符串数组，当没有依赖时可以为空数组；chunkName可以使得相同name的模块同时加载
+let Project = (resolve) => {
+	return require.ensure([],() => {
+		resolve(require('@/views/project'))
+	})
+}
+
+let Work = (resolve) => {
+	return require.ensure([],() => {
+		resolve(require('@/views/work'))
+	},'abc')
+}
+
+let Doc  = (resolve) => {
+	return require.ensure([],() => {
+		resolve(require('@/views/doc'))
+	},'abc')
+}
+
 
 Vue.use(Router)
 
