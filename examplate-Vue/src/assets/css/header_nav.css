@@ -38,7 +38,10 @@ s, i, em {
 	background-color: #324157;
 	height: 66px;
 }
- .header-nav::before,.header-nav::after {
+.header-nav .logo img{
+	height: 34px;
+}
+.header-nav::before,.header-nav::after {
 	content: '';
 	display: block;
 }
