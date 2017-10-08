@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>首页</title>
+</head>
+
+<body>
+  <div id="body">
+    <div>
+      头部组件
+    </div>
+    <div>
+      查询组件
+    </div>
+    <div class="main-content-w" v-cloak>
+      <div class="carousel-wrap mt13">
+        <transition-group class='slide-ul' tag="ul" name="list" mode="out-in">
+          <li v-for="(item,index) of slides" :key="index" v-show="index===slideIndex" @mouseenter="stop" @mouseleave="go">
+            <a :src="item.clickUrl">
+              <img :src="item.image" :alt="item.desc">
+            </a>
+          </li>
+        </transition-group>
+        <div class="carousel-items">
+          <span v-for="(item,index) of slides.length" :class="{'active':index===slideIndex}" @click="change(index)"></span>
+        </div>
+      </div>
+      <!-- 导航 nav -->
+      <ul class="nav mt13">
+        <li>
+          <a href="productLists.html?state=1">
+            <i class="icon-zhu"></i> 挖掘机租赁
+          </a>
+        </li>
+        <li>
+          <a href="productLists.html?state=2">
+            <i class="icon-shou"></i> 挖掘机销售
+          </a>
+        </li>
+        <li>
+          <a href="productLists.html?state=3">
+            <i class="icon-pei"></i> 配件商城
+          </a>
+        </li>
+        <li>
+          <a href="helpCenter.html">
+            <i class="icon-wen"></i> 资源中心
+          </a>
+        </li>
+      </ul>
+      <!-- 导航 nav end-->
+      <!-- 热门推荐 recommendation-->
+      <div class="recommendation">
+        <h2 class="recommendation-title"><i class="icon-chache"></i>热门推荐</h2>
+        <div class="recommendation-content">
+          <!--  右边   -->
+          <div class="recommendation-content-right">
+            <!-- 代码故障查询 -->
+            <div class="query">
+              <h3 class="query-title">故障代码查询</h3>
+              <div class="query-content">
+                <input type="text" placeholder="请输入故障代码">
+                <button class="query-btn">查询</button>
+              </div>
+            </div>
+            <!-- 物流查询 -->
+            <div class="query mt13">
+              <h3 class="query-title">物流查询</h3>
+              <div class="query-content">
+                <input type="text" placeholder="请输入运单号">
+                <button class="query-btn">查询</button>
+              </div>
+            </div>
+            <!-- 配件推荐 -->
+            <ul class="accessories-recommendation-item mt13">
+              <li v-for="(item,index) of partsList" :key="index">
+                <a href="javascript:;">
+                  <img :src="item.image"  alt="配件推荐商品">
+                  <p>{{ item.name }}</p>
+                  <span><i>{{ item.discount }}</i>元</span>
+                </a>
+              </li>
+            </ul>
+            <!-- 客服热线 -->
+            <div class="service-hotline">
+              客服热线：13800138000
+            </div>
+          </div>
+          <!--   左边   -->
+          <ul class="recommendation-content-left">
+            <li class="mt13" v-for="(item,index) of excavatorList" :key="index">
+              <span class="hot-logo" v-if="item.isHot">热卖</span>
+              <a href="javascript:;">
+								<img :src="item.image" style="width:745px;height:292px;">
+              </a>
+              <!-- 租 -->
+              <div class="recommendation-rent">
+                <h4>{{ item.name }}</h4>
+                <span title="">{{ item.desc }}</span>
+                <dl>
+                  <dt>载重：</dt>
+                  <dd>{{ item.weight }}吨</dd>
+                </dl>
+                <dl>
+                  <dt v-if="item.businessType === 2">租金：</dt>
+                  <dt v-if="item.businessType === 1">金额：</dt>
+                  <dd v-if="item.businessType === 2" class="ftheme-color"><i>{{ item.discount }}</i>元/月</dd>
+                  <dd v-if="item.businessType === 1" class="ftheme-color"><i>{{ item.discount }}</i>元</dd>
+                  <dd class="special" v-if="item.businessType === 2">(3个月起租)</dd>
+                </dl>
+                <div class="recommendation-rent-detail">
+                  <div class="recommendation-rent-num">
+                    <div class="num">
+                      <a href="javascript:;"><i class="icon-jian" @click="reduceNum('buyNum',item)"></i></a>
+                      <input type="text" :value="item.buyNum" disabled>
+                      <a href="javascript:;"><i class="icon-jia" @click="addNum('buyNum',item)"></i></a>
+                      <em>辆</em>
+                    </div>
+                    <div class="num" v-if="item.businessType === 2">
+                      <a href="javascript:;"><i class="icon-jian" @click="reduceNum('month',item)"></i></a>
+                      <input type="text" :value="item.month" disabled>
+                      <a href="javascript:;"><i class="icon-jia" @click="addNum('month',item)"></i></a>
+                      <em>月</em>
+                    </div>
+                  </div>
+                  <button>加入购物车</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 热门推荐 recommendation end-->
+      <!-- 资讯常识 information-sense-->
+      <div class="information-sense">
+        <h2 class="recommendation-title"><i class="icon-chache"></i>资讯常识</h2>
+        <div class="information-sense-lists">
+          <h3>维修保养</h3>
+          <ul>
+            <li><a href="'helpCenter.html">文章</a></li>
+          </ul>
+          <a class="more" href="helpCenter.html?type=1">更多。。。</a>
+        </div>
+        <div class="information-sense-lists ml16">
+          <h3>叉车服务常见疑问</h3>
+          <ul>
+            <li><a href="'helpCenter.html">文章</a></li>
+          </ul>
+          <a class="more" href="helpCenter.html?type=4">更多。。。</a>
+        </div>
+      </div>
+      <!-- 资讯常识 information-sense end-->
+    </div>
+    <div>
+      底部组件
+    </div>
+  </div>
+</body>
+
+</html>

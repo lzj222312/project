@@ -108,7 +108,7 @@ let vm = new Vue({
 })
 
 function watchHash() {
-    let hash = window.location.hash.slice(1);
+		let hash = window.location.hash.slice(1);
     vm.localHash = hash;
 }
 

@@ -1,0 +1,76 @@
+$theme-color: #0051ad;
+$btn-color:#ff7200;
+$common-color: #3a3a3a;
+$fz-12: 12px;
+$main-content-w: 1200px;
+
+.mt13{
+    margin-top: 13px;
+}
+.mt60{
+    margin-top: 60px;
+}
+.ml50{
+    margin-left: 50px;
+}
+.ml16{
+    margin-left: 16px;
+}
+.main-content-w{
+    width: $main-content-w;
+    margin: 0 auto;
+}
+.ftheme-color{
+    color: $theme-color;
+}
+.fbtn-color{
+    color: $btn-color !important;
+}
+.bg-theme-color{
+    background-color: $theme-color !important;
+}
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
+.clearfix{ clear:both}
+.clearfix:after{
+    display:block;
+    content:".";
+    clear:both;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+label{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    outline:none;
+    margin: 0;
+    padding:0;
+}
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
