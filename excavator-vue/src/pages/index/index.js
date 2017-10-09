@@ -1,10 +1,8 @@
 import 'normalize.css'
 import './index.scss'
 
-import {
-  rap,
-  fetch
-} from 'js/fetch.js'
+import {rap,fetch} from 'js/fetch.js'
+import rotation from 'components/slide/slide.vue'
 
 let url = {
   list: '/merchandiseHot/list.do',
@@ -17,14 +15,12 @@ new Vue({
   data: {
     excavatorList: '',
     partsList: '',
-		slides: '',
-		slideIndex: 0,
-		timer: null
+		slides: ''
   },
   created() {
     this.getList(3)
-    this.getList()
-    this.getSlides()
+		this.getList()
+		this.getSlides()
   },
   methods: {
     getList(type = undefined) {
@@ -37,36 +33,11 @@ new Vue({
           this.excavatorList = res.data.merchandiseHotVOList
         }
       })
-    },
-    getSlides() {
-      fetch("post", url.slides).then((res) => {
+		},
+		getSlides() {
+			fetch("post", url.slides).then((res) => {
 				this.slides = res.data.slideList
-				this.$nextTick(() => {
-					this.timer = setInterval(() => {
-						this.auto()
-					},3000)
-				})
-      })
-		},
-		change(index){
-			this.slideIndex = index
-		},
-		auto(){
-			this.slideIndex++
-			if(this.slideIndex > this.slides.length-1){
-				this.slideIndex = 0
-			}
-			
-		},
-		go(){
-			clearInterval(this.timer)
-			this.timer = setInterval(() => {
-						this.auto()
-					},3000)
-		},
-		stop(){
-			clearInterval(this.timer)
-			this.timer = null
+			})
 		},
     addNum(type, item) {
       type === 'buyNum' ? item.buyNum++ : item.month++
@@ -87,6 +58,9 @@ new Vue({
             break
       }
     }
-  }
+	},
+	components: {
+		rotation
+	}
 })
 

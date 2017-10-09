@@ -1,0 +1,18 @@
+.list-enter-active {
+	transition: all 2s ease;
+	opacity: 1;
+  transform: translateY(0)
+}
+.list-leave-active {
+	transition: all 2s ease;
+	opacity: 0;
+  transform: translateY(100%)
+}
+.list-enter {
+	opacity: 0;
+  transform: translateY(100%);
+}
+.list-leave {
+	opacity: 1;
+  transform: translateY(0);
+}

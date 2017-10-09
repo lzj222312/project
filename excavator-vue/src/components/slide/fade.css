@@ -1,0 +1,14 @@
+.list-enter-active {
+	transition: all 2s ease;
+	opacity: 1;
+}
+.list-leave-active {
+	transition: all 2s ease;
+	opacity: 0;
+}
+.list-enter {
+	opacity: 0;
+}
+.list-leave {
+	opacity: 1;
+}
