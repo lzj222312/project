@@ -1,0 +1,136 @@
+@import "../../modules/sass/variables.scss";
+.wrapper-width {
+  min-width: 1200px;
+}
+
+.content-title {
+  float: left;
+  overflow: hidden;
+  .logo-red {
+    float: left;
+    display: block;
+    height: 90px;
+    width: 90px;
+    margin-left: 40px;
+    background: url(imgs/1.gif) no-repeat center;
+  }
+  p {
+    float: left;
+    padding-left: 10px;
+    font-size: 35px;
+    line-height: 90px;
+    color: #fff;
+  }
+}
+
+.search {
+  height: 120px;
+  background-image: url(imgs/search-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .content-title {
+    margin-top: 10px;
+  }
+  .search-box {
+    float: right;
+    width: 428px;
+    height: 38px;
+    margin: 40px 10px 0 0;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+}
+
+.search-box {
+  .search-type-btn {
+    float: left;
+    width: 86px;
+    padding: 4px 0;
+    border-right: 1px solid #c4c4c4;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer
+  }
+  input {
+    float: left;
+    width: 240px;
+    padding-left: 30px;
+    font-size: 14px;
+    color: #bababa;
+    line-height: 36px;
+    border: 0 none;
+  }
+  button {
+    float: right;
+    width: 70px;
+    height: 39px;
+    background-color: $btn-color;
+    border-radius: 0 3px 3px 0;
+    i {
+      font-size: 26px;
+      text-align: 70px;
+      line-height: 35px;
+      color: #fff;
+    }
+  }
+}
+
+.search-type-btn {
+  position: relative;
+  .arrow-up {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #c4c4c4;
+  }
+  .arrow-down {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #c4c4c4;
+  }
+  .search-ul-wrap {
+    position: absolute;
+    left: -1px;
+    top: 38px;
+    z-index: 10;
+    padding-top: 4px;
+  }
+  ul {
+    width: 74px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #c4c4c4;
+    li {
+      height: 30px;
+    }
+    a {
+      display: block;
+      width: 74px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 30px;
+      color: #bababa;
+    }
+    .select a,
+    a:hover {
+      color: $btn-color;
+      background-color: #ededed;
+      border-radius: 2px;
+    }
+  }
+}

@@ -3,51 +3,52 @@
 
 <head>
   <meta>
-	<title>登录</title>
-	<style>
-		[v-cloak]{ display: none !important; }
-	</style>
+  <title>登录</title>
+  <style>
+    [v-cloak] {
+      display: none !important;
+    }
+
+  </style>
 </head>
 
 <body>
-  <div>
-    头部
-  </div>
-  <div class="login-content">
-    <div class="main-content-w">
-      <div class="content-title">
-        <i class="logo-red"></i>
-        <p>饥人谷挖掘机服务平台</p>
-      </div>
-      <div class="login-content-box">
-        <h3 class="login-box-title">
-          登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录
-        </h3>
-        <div class="login-box-msg" id="loginBoxMsg" v-cloak>
-          <div class="login-box-msg-common login-box-msg-tel">
-            <i class="icon-id"></i>
-            <input type="tel" placeholder="请输入已验证手机号" v-model.trim="phone" @blur="isPhone">
-          </div>
-          <p class="validate_msg">{{ phoneMsg }}</p>
-          <div class="login-box-msg-common login-box-msg-pwd">
-            <i class="icon-key"></i>
-            <input type="password" placeholder="请输入密码" v-model.trim="passwd" @blur="isPasswd">
-          </div>
-          <p class="validate_msg">{{ passwdMsg }}</p>
-          <div class="login-btn-box">
-            <el-button class="btn" :loading="loginFlag" @click="isLogin"> {{ loginFlag === false ? '登录':'' }} </el-button>
-            <div class="login-fail">
-              <a href="register.html">立即注册</a>
-              <a href="forgetPwd.html">忘记密码？</a>
+  <div id="app">
+    <div class="login-content">
+      <div class="main-content-w">
+        <div class="content-title">
+          <i class="logo-red"></i>
+          <p>挖掘机服务平台</p>
+        </div>
+        <div class="login-content-box">
+          <h3 class="login-box-title">
+            登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录
+          </h3>
+          <div class="login-box-msg" id="loginBoxMsg" v-cloak>
+            <div class="login-box-msg-common login-box-msg-tel">
+              <i class="icon-id"></i>
+              <input type="tel" placeholder="请输入已验证手机号" v-model.trim="phone" @blur="isPhone">
+            </div>
+            <p class="validate_msg">{{ phoneMsg }}</p>
+            <div class="login-box-msg-common login-box-msg-pwd">
+              <i class="icon-key"></i>
+              <input type="password" placeholder="请输入密码" v-model.trim="passwd" @blur="isPasswd">
+            </div>
+            <p class="validate_msg">{{ passwdMsg }}</p>
+            <div class="login-btn-box">
+              <el-button class="btn" :loading="loginFlag" @click="isLogin"> {{ loginFlag === false ? '登录':'' }} </el-button>
+              <div class="login-fail">
+                <a href="register.html">立即注册</a>
+                <a href="forgetPwd.html">忘记密码？</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <foot></foot>
   </div>
-  <div>
-    底部
-  </div>
+
 </body>
 
 </html>

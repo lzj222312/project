@@ -1,0 +1,89 @@
+@import "../../modules/sass/variables.scss";
+.wrapper-width {
+  min-width: 1200px;
+}
+
+.ft {
+  background-color: #555;
+}
+
+.ft-resourceCenter {
+  overflow: hidden;
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid #fff;
+  li {
+    float: left;
+    width: 21%;
+    padding: 0 2%;
+    i {
+      display: block;
+      height: 96px;
+      width: 96px;
+      margin: 20px auto 20px;
+    }
+    .ft-guide {
+      background: url(./imgs/ft-guide.png) no-repeat center;
+    }
+    .ft-service {
+      background: url(./imgs/ft-service.png) no-repeat center;
+    }
+    .ft-payment {
+      background: url(./imgs/ft-payment.png) no-repeat center;
+    }
+    .ft-delivery {
+      background: url(./imgs/ft-delivery.png) no-repeat center;
+    }
+    h5 {
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      color: #fff;
+      padding-bottom: 10px;
+    }
+    a {
+      display: block;
+      font-size: 14px;
+      line-height: 26px;
+      text-align: center;
+      color: #999;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ft-info {
+  height: 230px;
+  color: #b5b5b5;
+  p {
+    text-align: center;
+  }
+  .ft-info-logo {
+    float: left;
+    width: 20%;
+    color: #858585;
+    .logo-white {
+      display: block;
+      height: 90px;
+      width: 90px;
+      margin: 30px auto 5px;
+      background: url(./imgs/3.gif) no-repeat center;
+    }
+  }
+  .ft-info-content {
+    float: left;
+    width: 60%;
+    padding-top: 75px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .ft-info-qr {
+    float: right;
+    width: 20%;
+    img {
+      display: block;
+      margin: 30px auto 10px;
+    }
+  }
+}

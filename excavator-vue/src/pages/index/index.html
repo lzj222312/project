@@ -7,14 +7,10 @@
 </head>
 
 <body>
-  <div id="body">
-    <div>
-      头部组件
-    </div>
-    <div>
-      查询组件
-    </div>
-    <div class="main-content-w" v-cloak>
+  <div id="body" v-cloak>
+    <top></top>
+    <search></search>
+    <div class="main-content-w">
       <rotation :slide-list="slides" model="fade"></rotation>
       <!-- 导航 nav -->
       <ul class="nav mt13">
@@ -142,9 +138,7 @@
       </div>
       <!-- 资讯常识 information-sense end-->
     </div>
-    <div>
-      底部组件
-    </div>
+    <foot></foot>
   </div>
 </body>
 

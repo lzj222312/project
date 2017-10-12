@@ -1,0 +1,470 @@
+@import "../../modules/icon/style.css";
+@import "../../modules/sass/variables.scss";
+
+[v-cloak] {
+  display: none;
+}
+
+.cur-index{
+    width: 99%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  background-color: #dcdcdc;
+  padding-left: 1%;
+    a{
+        color: #2a2a2a;
+    }
+    a:hover{
+        color: $theme-color;
+    }
+    i{
+        color: $theme-color;
+    }
+}
+
+
+section {
+  float: right;
+  width: 452px;
+}
+
+
+//left left-content
+.left-content {
+  margin-right: 464px;
+}
+// 搜索为空
+.search-empty{
+  padding:50px 0;
+  .icon-no-data{
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    background: url(imgs/no_data.png) no-repeat center;
+  }
+  p{
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    color: #7a7a7a;
+  }
+}
+
+// --brand-sort
+.brand-sort {
+  position: relative;
+  border: 1px solid #ececec;
+  padding: 5px;
+  dl {
+    overflow: hidden;
+    margin: 8px 0;
+    dt {
+      float: left;
+      width: 13%;
+      font-size: 12px;
+      line-height: 36px;
+      text-align: center;
+      color: #454545;
+    }
+    dd {
+      float: left;
+      overflow: hidden;
+      width: 80%;
+      a {
+        float: left;
+        display: block;
+        height: 26px;
+        padding: 0 10px;
+        margin: 5px 10px;
+        font-size: 12px;
+        line-height: 26px;
+        color: #454545;
+      }
+      .cur,
+      a:hover {
+        background-color: $theme-color;
+        color: #fff;
+      }
+    }
+  }
+  .delete-all-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0 5px;
+    color: #454545;
+    border: 1px solid #ececec;
+  }
+}
+
+// --products-lists
+.products-lists {
+  margin-left: -6px;
+  margin-right: -6px;
+  overflow: hidden;
+  li {
+    position: relative;
+    float: left;
+    width: 48%;
+    margin: 0 6px 12px 6px;
+    border: 1px solid #ececec;
+    overflow: hidden;
+    img {
+      float: left;
+      display: block;
+      height: 167px;
+      width: 167px;
+    }
+  }
+  button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 28px;
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+    background-color: $theme-color;
+  }
+}
+
+.products-lists-item {
+  position: relative;
+  float: left;
+  width: 165px;
+  padding: 12px 0 0 20px;
+  background-color: #fff;
+  h4 {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 ;
+  }
+  span {
+    // display: block;
+    font-size: 12px;
+    color: $btn-color;
+    line-height: 24px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .accessory-detail {
+    margin: 10px 0;
+    height: 48px;
+    overflow: hidden;
+    p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .adaptation-situation {
+    margin: 8px 0;
+    h5 {
+      font-weight: 400;
+      font-size: 12px;
+      margin: 6px 0;
+    }
+    p {
+      line-height: 20px;
+    }
+  }
+  dl {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  dt {
+    float: left;
+    width: 40px;
+  }
+  dd {
+    float: left;
+    i {
+      font-size: 18px;
+      color: $btn-color;
+    }
+  }
+  .special {
+    margin-left: 50px;
+    line-height: 20px;
+  }
+}
+
+//  --商品详情
+.products-show {
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 13px;
+}
+
+.pictures-show {
+  float: left;
+  width: 386px;
+  .pictures-show-big {
+    height: 386px;
+    width: 386px;
+    border: 1px solid #eaeaea;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .pictures-small-lists-wrap {
+    position: relative;
+    height: 86px;
+    width: 360px;
+    overflow: hidden;
+    padding: 6px 13px 0 15px;
+    ul {
+      overflow: hidden;
+      li {
+        float: left;
+        height: 82px;
+        width: 82px;
+        border: 2px solid #dcdcdc;
+        margin: 0 2px;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    a {
+      position: absolute;
+      width: 10px;
+      height: 86px;
+      color: #fff;
+      font-size: 12px;
+      line-height: 86px;
+      text-align: center;
+      background-color: #dcdcdc;
+    }
+    .left-btn {
+      left: 0;
+      top: 6px;
+      transform: rotate(180deg);
+    }
+    .right-btn {
+      right: 0;
+      top: 6px;
+    }
+  }
+}
+
+.products-details {
+  position: relative;
+  width: 300px;
+  height: 485px;
+  margin-left: 408px;
+  color: #3b3b3b;
+  h4 {
+    height: 60px;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  span {
+    display: block;
+    color: $btn-color;
+    font-size: 12px;
+    padding-right: 10px;
+    line-height: 24px;
+  }
+  .adaptation-situation-detail {
+    padding-top: 10px;
+    p {
+      line-height: 20px;
+    }
+  }
+  dl {
+    overflow: hidden;
+    dt {
+      float: left;
+      width: 70px;
+      text-align: left;
+      line-height: 40px;
+    }
+    dd {
+      float: left;
+      line-height: 40px;
+      i {
+        display: inline-block;
+        padding-right: 5px;
+        font-size: 24px;
+        line-height: 40px;
+        color: $btn-color;
+        vertical-align: bottom;
+      }
+      em {
+        color: $theme-color;
+        font-size: 20px;
+        padding-right: 5px;
+      }
+    }
+    .num {
+      font-size: 0;
+      width: 100px;
+      font-size: 0;
+      input {
+        border: 0 none;
+        width: 40px;
+        height: 14px;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 0 5px;
+        text-align: center;
+        color: #3b3b3b;
+        vertical-align: middle;
+      }
+      a {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 14px;
+        color: $theme-color;
+      }
+    }
+  }
+  .btns {
+    position: relative;
+    position: absolute;
+    right: -28px;
+    bottom: 0;
+    height: 85px;
+    width: 325px;
+    font-size: 0;
+    text-align: center;
+    line-height: 85px;
+    background-color: #f6f6f6;
+    button {
+      display: inline-block;
+      height: 40px;
+      width: 124px;
+      margin: 0 16px;
+      font-size: 14px;
+      color: #fff;
+      background-color: $theme-color;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+    span {
+      position: absolute;
+      right: 10px;
+      top: -40px;
+      display: block;
+      font-size: 14px;
+      line-height: 24px;
+      color: $theme-color;
+    }
+    i {
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #c4c4c4;
+      vertical-align: middle;
+    }
+    .collected {
+      color: $btn-color;
+    }
+  }
+}
+
+//  --商品属性
+.products-attributes {
+  background-color: #f6f6f6;
+  padding: 20px;
+  dl {
+    float: left;
+    font-size: 12px;
+    overflow: hidden;
+    line-height: 24px;
+    width: 33.3%;
+    dt {
+      float: left;
+      display: block;
+      width: 70px;
+      color: #3b3b3b;
+      text-align: left;
+    }
+    dd {
+      float: left;
+      display: block;
+      color: #919191;
+    }
+  }
+}
+
+//  --商品图文
+.image-text {
+  padding: 20px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+//   --文章列表
+.article-lists {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  border: 1px solid #eaeaea;
+  li {
+    font-size: 0;
+    color: #7a7a7a;
+    border-bottom: 1px solid #eaeaea;
+    line-height: 46px;
+    i {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      margin-right: 20px;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      background-color: #f3f3f3;
+      color: #c4c4c4;
+      vertical-align: middle;
+    }
+    p {
+      display: inline-block;
+      width: 80%;
+      height: 46px;
+      vertical-align: middle;
+      a {
+        display: block;
+        font-size: 16px;
+        color: #7a7a7a;
+        line-height: 46px;
+        width: 90%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  li:nth-child(1),
+  li:nth-child(2),
+  li:nth-child(3) {
+    i {
+      background-color: $btn-color;
+      color: #fff;
+    }
+  }
+}
+
+//left left-content end

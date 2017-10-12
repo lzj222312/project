@@ -1,0 +1,86 @@
+@import "../../modules/sass/variables.scss";
+@import "../../modules/icon/style.css";
+
+.register {
+  width: 650px;
+  height: 418px;
+  margin: 0 auto;
+  padding-top: 100px;
+  background-color: #fff;
+}
+
+.register-import {
+  dl {
+    overflow: hidden;
+    margin-bottom: 17px;
+    dt {
+      float: left;
+      width: 100px;
+      line-height: 32px;
+      text-align: left;
+    }
+    dd {
+      float: left;
+      margin-left: 10px;
+    }
+    input {
+      height: 24px;
+      width: 332px;
+      padding: 3px 10px;
+      border: 1px solid #eaeaea;
+    }
+    span {
+      display: block;
+      height: 32px;
+      width: 90px;
+      font-size: 14px;
+      color: #fff;
+      text-align: center;
+      line-height: 32px;
+      background-color: #20A0FF;
+      cursor: pointer;
+    }
+    .btn-span {
+      background-color: #c4c4c4;
+    }
+  }
+  .validate_msg {
+    padding-left: 110px;
+    font-size: 14px;
+    color: #f00;
+  }
+}
+
+.register-success {
+  width: 420px;
+  margin: 0 auto;
+  .register-success-msg {
+    overflow: hidden;
+    text-align: center;
+    i {
+      float: left;
+      font-size: 60px;
+      line-height: 65px;
+      color: $btn-color;
+      margin-top: 35px;
+    }
+    p {
+      float: left;
+      padding-left: 30px;
+      font-size: 35px;
+      line-height: 65px;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  height: 36px;
+  width: 88px;
+  margin: 60px auto 0;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  background-color: $btn-color;
+}

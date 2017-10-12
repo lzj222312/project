@@ -1,66 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
-	<title>忘记密码</title>
-  <style>
-    [v-cloak] { display: none !important; }
-  </style>
+  <title>忘记密码</title>
 </head>
 
 <body>
-  <div>
-    头部
-  </div>
-  <div class="register" v-cloak>
-    <div class=" register-import" v-show="!registerFlag">
-      <dl>
-        <dt>手机号：</dt>
-        <dd>
-          <input type="tel" v-model="phone" @blur="isPhone">
-        </dd>
-        <dd><span :class="{'btn-span':isBtn}" @click="isObtain">{{ obtainSecond == 10? '获取验证码': obtainSecond + 's'}}</span></dd>
-      </dl>
-      <p class="validate_msg">{{ phoneMsg }}</p>
-      <dl>
-        <dt>输入验证码：</dt>
-        <dd>
-          <input type="type" v-model="verification">
-        </dd>
-      </dl>
-      <p class="validate_msg">{{ verificationMsg }}</p>
-      <dl>
-        <dt>新密码：</dt>
-        <dd>
-          <input type="password" v-model="passwd" @blur="isPassWd">
-        </dd>
-      </dl>
-      <p class="validate_msg">{{ passwdMsg }}</p>
-      <dl>
-        <dt>确认密码：</dt>
-        <dd>
-          <input type="password" v-model="verifyPasswd" @blur="verifyPwd">
-        </dd>
-      </dl>
-      <p class="validate_msg">{{ verifyPasswdMsg }}</p>
-      <button class="btn" @click="registered">
-        确&nbsp;&nbsp;&nbsp;&nbsp;定
-      </button>
-    </div>
-    <!--        注册成功后         -->
-    <div class="register-success" v-show="registerFlag">
-      <div class="register-success-msg">
-        <i class="icon-chache"></i>
-        <p>设置密码成功！</p>
-      </div>
-      <button class="btn">
-        登&nbsp;&nbsp;&nbsp;&nbsp;录
-      </button>
-    </div>
-  </div>
-  <div>
-    底部
+  <div id="app">
+		<common></common>
+		<foot></foot>
   </div>
 </body>
 

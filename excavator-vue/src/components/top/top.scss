@@ -1,0 +1,52 @@
+@import "../../modules/sass/variables.scss";
+
+ .wrapper-width {
+   min-width: 1200px;
+ }
+
+ .hd {
+   height: 33px;
+   background-color: #eee;
+   line-height: 33px;
+   font-size: $fz-12;
+   color: #3c3c3c;
+   overflow: hidden;
+ }
+
+ .hd-left {
+   float: left;
+   li {
+     float: left;
+     a {
+       display: block;
+       float: left;
+       padding: 0 12px;
+       line-height: 33px;
+       color: $theme-color;
+     }
+   }
+ }
+
+ .hd-right {
+   float: right;
+   height: 33px;
+   line-height: 33px;
+   li {
+     float: left;
+     height: 33px;
+     font-size: 12px;
+     i {
+       padding: 0 3px;
+       font-size: 18px;
+       vertical-align: -2px;
+     }
+   }
+   a {
+     margin: 0 10px;
+     color: $common-color;
+     font-size: 12px;
+   }
+   a:hover {
+     color: $theme-color;
+   }
+ }

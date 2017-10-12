@@ -2,7 +2,10 @@ import 'normalize.css'
 import './index.scss'
 
 import {rap,fetch} from 'js/fetch.js'
-import rotation from 'components/slide/slide.vue'
+import Rotation from 'components/slide/slide.vue'
+import Top from 'components/top/top.vue'
+import Foot from 'components/foot/foot.vue'
+import Search from 'components/search/search.vue'
 
 let url = {
   list: '/merchandiseHot/list.do',
@@ -11,7 +14,7 @@ let url = {
 
 url = rap(url)
 new Vue({
-  el: '.main-content-w',
+  el: '#body',
   data: {
     excavatorList: '',
     partsList: '',
@@ -60,7 +63,10 @@ new Vue({
     }
 	},
 	components: {
-		rotation
+		Rotation,
+		Top,
+		Foot,
+		Search
 	}
 })
 

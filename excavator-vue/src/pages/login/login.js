@@ -1,6 +1,8 @@
 import 'normalize.css'
 import './login.scss'
 
+import Foot from 'components/foot/foot.vue'
+
 import { Button,Message } from 'element-ui'
 import { rap,fetch } from 'js/fetch.js'
 import { checkphone } from 'js/validate.js'
@@ -14,7 +16,7 @@ let url = {
 url = rap(url)
 
 new Vue({
-  el: '#loginBoxMsg',
+  el: '#app',
   data: {
     phone: '',
     passwd: '',
@@ -69,5 +71,8 @@ new Vue({
 						}
           })
     }
-  }
+	},
+	components: {
+		Foot
+	}
 })
