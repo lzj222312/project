@@ -29,7 +29,8 @@
 </template>
 
 <script>
-import { fetch,rap } from 'js/fetch.js'
+import { fetch, rap } from 'js/fetch.js'
+import bus from 'js/bus.js'
 
 let url = {
 	getUrl: '/user/getUser.do',
@@ -38,36 +39,46 @@ let url = {
 url = rap(url)
 
 export default {
-	data(){
+	data() {
 		return {
 			mobile: '',
 			isLogin: false
 		}
 	},
-	created(){
+	created() {
 		this.getUser()
+
+		bus.$on('login', (data) => {
+			this.mobile = data.mobile
+			this.isLogin = true
+		})
 	},
 	methods: {
-		getUser(){
-			fetch('post',url.getUrl)
-					.then((res) => {
-						// console.log(res)
-						this.isLogin = true
-						this.mobile = res.data.user.mobile
-					})
+		getUser() {
+			fetch('post', url.getUrl)
+				.then((res) => {
+					// console.log(res)
+					this.isLogin = true
+					let userInfo = res.data.user
+					this.name = userInfo.name
+					this.headImage = userInfo.headlmage
+					this.mobile = userInfo.mobile
+					bus.$emit('topLogin', res)
+				})
 		},
-		dropOut(){
-			fetch('post',url.dropOut)
-					.then((res) => {
-						// console.log(res)
-						this.isLogin = false
-						this.mobile = ''
-					})
+		dropOut() {
+			fetch('post', url.dropOut)
+				.then((res) => {
+					// console.log(res)
+					this.isLogin = false
+					this.mobile = ''
+					bus.$emit('dropOut')
+				})
 		}
 	}
 }
 </script>
 
 <style scoped lang="scss">
-	@import './top.scss'
+@import './top.scss'
 </style>

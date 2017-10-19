@@ -1,0 +1,101 @@
+@import "../../modules/sass/variables.scss";
+
+.personal-session-logged {
+  position: relative;
+  height: 122px;
+  width: 450px;
+  border: 1px solid #f3f3f3;
+  .personal-face {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 20px 0 0 70px;
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  .personal-info {
+    float: left;
+    margin: 30px 0 0 20px;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  button {
+    float: right;
+    height: 30px;
+    width: 90px;
+    margin: 70px 32px 0 0;
+    border: 1px solid #f3f3f3;
+    font-size: 12px;
+    text-align: center;
+    background-color: $btn-color;
+    color: #fff;
+  }
+  &:before {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    display: block;
+    content: "个人中心";
+    height: 114px;
+    width: 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+    line-height: 28px;
+    background-color: $theme-color;
+    color: #fff;
+  }
+}
+
+.personal-session-notloged {
+  overflow: hidden;
+  border: 1px solid #e5ddd4;
+  .login-box-msg {
+    float: left;
+    
+  }
+  .login-box-msg-common {
+    margin: 10px 12px;
+    height: 38px;
+    width: 305px;
+    border: 1px solid #eaeaea;
+    i{
+        display: block;
+        float: left;
+        width: 55px;
+        text-align: center;
+        line-height: 38px;
+        color: #c8c8c8;
+    }
+    input{
+        float: left;
+        height: 30px;
+        padding: 4px 0 4px 15px;
+        border: 0 none;
+    }
+  }
+  button {
+    float: left;
+    display: block;
+    height: 36px;
+    width: 88px;
+    margin: 62px 0 0 10px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background-color: $btn-color;
+  }
+  .login-box-msg-tel{
+        i{
+            font-size: 36px;
+        }
+  }
+  .login-box-msg-pwd{
+      i{
+          font-size: 22px;
+      }
+  }
+}

@@ -19,7 +19,7 @@
             <h4>添加任务 :</h4>
             <input class="task-input" 
                    type="text" 
-                   placeholder="例如：吃饭睡觉打豆豆；    提示：+回车即可添加任务"
+									 placeholder="例如：吃饭睡觉打豆豆；    提示：+回车即可添加任务"
                    v-model="todo"
                    @keyup.13="addTodo"    
             />
@@ -41,7 +41,7 @@
                             </div>
                             <input type="text"
                                    class="edit"
-                                   v-model="item.title"
+																	 v-model="item.title"
                                    v-focus="edtorTodo === item"
                                    @blur="complatedTodo"
                                    @keyup.13="complatedTodo"

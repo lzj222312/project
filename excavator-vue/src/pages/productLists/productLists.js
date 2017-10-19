@@ -4,10 +4,13 @@ require('normalize.css')
 import { Message } from 'element-ui'
 import { fetch,rap } from 'js/fetch.js'
 import utils from 'js/utils.js'
+import bus from 'js/bus.js'
 
 import Top from 'components/top/top.vue'
 import Search from 'components/search/search.vue'
 import Foot from 'components/foot/foot.vue'
+import Logstate from 'components/logstate/logstate.vue'
+import Minicart from 'components/minicart/minicart.vue'
 
 let url = {
 	classify: '/lists/classify.do',
@@ -89,11 +92,17 @@ new Vue({
 			}).then(res => {
 				this.list = res.data.list
 			})
+		},
+		add(id){
+			// console.log(id)
+			bus.$emit('add',id)
 		}
 	},
   components: {
     Top,
     Foot,
-    Search
+		Search,
+		Logstate,
+		Minicart
   }
 })

@@ -13,8 +13,10 @@
     <div class="main-content-w clearfix">
       <!--right-->
       <section>
-        <!--个人中心-->
-        <!--购物车中心-->
+				<!--个人中心-->
+				<logstate></logstate>
+				<!--购物车中心-->
+				<minicart :state="state"></minicart>
       </section>
       <!--left  列表-->
       <div class="left-content mt13">
@@ -76,7 +78,7 @@
                     <dd><i>{{ item.discount }}</i>元</dd>
                   </dl>
                 </div>
-                <button>加入购物车</button>
+                <button @click="add(item.id)">加入购物车</button>
               </li>
               <!--配件-->
               <li v-if="state===3" v-for="(item,index) in list">
@@ -92,7 +94,7 @@
                     <dd><i>{{item.discount}}</i>元</dd>
                   </dl>
                 </div>
-                <button>加入购物车</button>
+                <button @click="add(item.id)">加入购物车</button>
               </li>
             </ul>
           </div>

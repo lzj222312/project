@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-
-var host = "http://www.easy-mock.com/mock/59d3bea69cabc90bb5e5f8d7/mall"
+var host = require('./host-config').devHost
 
 // 开发环节，所有接口走rap数据
 function rap(urlList) {

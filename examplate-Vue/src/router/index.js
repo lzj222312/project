@@ -47,7 +47,7 @@ let Doc  = (resolve) => {
 Vue.use(Router)
 
 let router = new Router({
-	// mode: 'history',
+	mode: 'history',
 	linkActiveClass: 'router-link-exact-active',
   routes: [{
       path: '/',
