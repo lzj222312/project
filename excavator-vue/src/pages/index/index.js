@@ -6,6 +6,7 @@ import Rotation from 'components/slide/slide.vue'
 import Top from 'components/top/top.vue'
 import Foot from 'components/foot/foot.vue'
 import Search from 'components/search/search.vue'
+import bus from 'js/bus.js'
 
 let url = {
   list: '/merchandiseHot/list.do',
@@ -60,7 +61,10 @@ new Vue({
           item.month--
             break
       }
-    }
+		},
+		add(item){
+			bus.$emit('indexadd',item)
+		}
 	},
 	components: {
 		Rotation,

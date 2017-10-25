@@ -1,0 +1,990 @@
+@import "../../modules/icon/style.css";
+@import "../../modules/sass/variables.scss";
+
+[v-cloak] {
+  display: none;
+}
+
+
+section {
+  float: left;
+  width: 282px;
+}
+
+.left-fault-query {
+  border: 1px solid #203a6d;
+  background: url(imgs/personal-left-bg.jpg) no-repeat center;
+  height: 313px;
+  img {
+    display: block;
+    height: 102px;
+    width: 102px;
+    border: 2px solid #fff;
+    margin: 35px auto 20px;
+    border-radius: 50%;
+  }
+  p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 36px;
+    text-align: center;
+  }
+}
+
+.left-nav {
+  margin-bottom: 50px;
+}
+
+.left-nav > li > a {
+  display: block;
+  height: 48px;
+  padding-left: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 48px;
+  color: #303030;
+  background-color: #f8f8f8;
+  border: 1px solid #e9e9e9;
+  border-top: none;
+  i {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: $btn-color;
+    line-height: 32px;
+    text-align: center;
+  }
+  .icon-order {
+    font-size: 22px;
+  }
+  .icon-gouwuche2 {
+    font-size: 22px;
+  }
+}
+
+// .left-nav > li:hover > ul{
+//     display: block;
+// }
+.left-subnav {
+  // 隐藏 展开
+  display: block;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+  li {
+    line-height: 48px;
+    background-color: #fff;
+    border-bottom: 1px solid #e9e9e9;
+  }
+  a {
+    position: relative;
+    display: block;
+    padding-left: 92px;
+    font-size: 14px;
+    line-height: 48px;
+    color: #303030;
+  }
+  i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 12px;
+  }
+  li:hover,
+  a:hover,
+  .select a {
+    background-color: $btn-color;
+    color: #fff;
+  }
+}
+
+// left end
+//right
+.right-content {
+  margin-left: 296px;
+  min-height: 800px;
+}
+
+.common-title {
+  width: 98%;
+  height: 38px;
+  padding-left: 2%;
+  font-size: 16px;
+  line-height: 38px;
+  color: #303030;
+  background-color: #f8f8f8;
+  border: 1px solid #e9e9e9;
+}
+
+// ========================购物车====================
+// 购物车为空
+// .cart-empty {
+//   margin-top: 120px;
+//   h2 {
+//     font-size: 35px;
+//     color: #7a7a7a;
+//     font-weight: 400;
+//     line-height: 250px;
+//     text-align: center;
+//     i {
+//       display: inline-block;
+//       padding: 0 10px;
+//       font-size: 50px;
+//       line-height: 250px;
+//       vertical-align: middle;
+//       color: #b7b7b7;
+//     }
+//   }
+//   button {
+//     display: block;
+//     width: 176px;
+//     margin: 0 auto;
+//     font-size: 14px;
+//     height: 36px;
+//     line-height: 36px;
+//     color: #fff;
+//     background: $btn-color;
+//     text-align: center;
+//     border-radius: 3px;
+//     letter-spacing: 10px;
+//   }
+// }
+
+//购物车公用的样式cart-common
+// .cart-common {
+//   color: #303030;
+//   margin-bottom: 20px;
+//   .cart-title {
+//     display: table;
+//     table-layout: fixed;
+//     width: 100%;
+//     height: 38px;
+//     border: 1px solid #e9e9e9;
+//     background: #f8f8f8;
+//     li {
+//       display: table-cell;
+//       font-size: 14px;
+//       color: #303030;
+//       text-align: center;
+//       line-height: 38px;
+//     }
+//   }
+//   .cart-detail {
+//     border: 1px solid #e9e9e9;
+//     table {
+//       width: 100%;
+//       table-layout: fixed;
+//     }
+//     td {
+//       text-overflow: ellipsis;
+//       overflow: hidden;
+//       white-space: nowrap;
+//       height: 120px;
+//       line-height: 120px;
+//       border-bottom: 1px solid #e9e9e9;
+//       text-align: center;
+//     }
+//     .cart-detail-img {
+//       width: 98px;
+//       height: 98px;
+//       line-height: 98px;
+//       margin: 10px auto 10px;
+//       border: 1px solid #e9e9e9;
+//       img {
+//         display: block;
+//         width: 100%;
+//       }
+//     }
+//   }
+//   .num {
+//     font-size: 0;
+//     height: 16px;
+//     input {
+//       font-size: 14px;
+//       height: 16px;
+//       width: 34px;
+//       line-height: 16px;
+//       vertical-align: middle;
+//       border: none;
+//       text-align: center;
+//       color: #303030;
+//     }
+//     a {
+//       font-size: 16px;
+//       color: $theme-color;
+//       line-height: 16px;
+//       vertical-align: middle;
+//     }
+//   }
+//   .cart-checkbox {
+//     -webkit-appearance: initial;
+//     -moz-appearance: initial;
+//     -ms-appearance: initial;
+//     -o-appearance: initial;
+//     display: inline-block;
+//     width: 17px;
+//     height: 17px;
+//     z-index: 1;
+//     background: url(imgs/Icon-circle.png) no-repeat center;
+//   }
+//   input[name="cart-checked"]:checked {
+//     background: url(imgs/Icon-circle-dot.png) no-repeat center;
+//   }
+// }
+
+// .cart-bottom {
+//   height: 48px;
+//   line-height: 48px;
+//   font-size: 14px;
+//   span {
+//     position: relative;
+//     padding: 0 20px 0 90px;
+//     i {
+//       height: 48px;
+//       font-size: 24px;
+//       padding-right: 20px;
+//       vertical-align: middle;
+//     }
+//     input {
+//       position: absolute;
+//       left: 40px;
+//       top: 0;
+//       margin-right: 10px;
+//     }
+//   }
+//   a {
+//     display: inline-block;
+//     color: #303030;
+//     i {
+//       display: inline-block;
+//       padding: 0 8px;
+//       color: #c4c4c4;
+//       font-size: 16px;
+//       vertical-align: middle;
+//     }
+//   }
+//   button {
+//     display: inline-block;
+//     height: 30px;
+//     width: 80px;
+//     font-size: 14px;
+//     line-height: 30px;
+//     border-radius: 3px;
+//     background: $btn-color;
+//     color: #fff;
+//     margin-right: 30px;
+//   }
+// }
+
+//售，配件购物车（6列）
+//租物车（7列）
+// =====================购物车 end====================
+// =====================我的收藏夹 ====================
+// .my-collection {
+//   padding: 13px 40px;
+// }
+
+// .products-lists {
+//   margin-left: -6px;
+//   margin-right: -6px;
+//   overflow: hidden;
+//   li {
+//     position: relative;
+//     float: left;
+//     // width: 48%;
+//     // margin:0 6px 12px 6px;
+//     width: 47%;
+//     margin: 0 10px 12px 10px;
+//     border: 1px solid #ececec;
+//     overflow: hidden;
+//     img {
+//       float: left;
+//       display: block;
+//       height: 167px;
+//       width: 167px;
+//     }
+//     .hot-logo {
+//       position: absolute;
+//       left: -30px;
+//       top: 10px;
+//       display: block;
+//       font-size: 14px;
+//       height: 30px;
+//       width: 100px;
+//       line-height: 30px;
+//       color: #fff;
+//       background: $btn-color;
+//       text-align: center;
+//       transform: rotate(-45deg);
+//     }
+//   }
+//   button {
+//     position: absolute;
+//     right: 10px;
+//     bottom: 10px;
+//     height: 20px;
+//     padding: 0 10px;
+//     text-align: center;
+//     color: #fff;
+//     background-color: $theme-color;
+//   }
+// }
+
+// .products-lists-item {
+//   position: relative;
+//   float: left;
+//   width: 165px;
+//   padding: 12px 0 0 50px;
+//   background-color: #fff;
+//   h4 {
+//     font-size: 14px;
+//     line-height: 24px;
+//     font-weight: 400;
+//   }
+//   span {
+//     display: block;
+//     font-size: 12px;
+//     color: $btn-color;
+//     line-height: 24px;
+//     width: 100%;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//   }
+//   .accessory-detail {
+//     margin: 10px 0;
+//     height: 48px;
+//     overflow: hidden;
+//     p {
+//       font-size: 12px;
+//       line-height: 16px;
+//     }
+//   }
+//   .adaptation-situation {
+//     margin: 8px 0;
+//     h5 {
+//       font-weight: 400;
+//       font-size: 12px;
+//     }
+//     p {
+//       line-height: 20px;
+//     }
+//   }
+//   dl {
+//     overflow: hidden;
+//     font-size: 12px;
+//     line-height: 24px;
+//   }
+//   dt {
+//     float: left;
+//     width: 40px;
+//   }
+//   dd {
+//     float: left;
+//     i {
+//       font-size: 18px;
+//       color: $btn-color;
+//     }
+//   }
+//   .special {
+//     margin-left: 50px;
+//     line-height: 20px;
+//   }
+// }
+
+// =====================我的收藏夹 end=================
+// =====================意见反馈=================
+// .feedback {
+//   h4 {
+//     height: 38px;
+//     padding-left: 20px;
+//     line-height: 38px;
+//     font-weight: 400;
+//     color: #303030;
+//     background: #f8f8f8;
+//     border: 1px solid #e9e9e9;
+//   }
+// }
+
+// .feedback-content {
+//   dl {
+//     overflow: hidden;
+//     margin-top: 30px;
+//   }
+//   dt {
+//     float: left;
+//     line-height: 38px;
+//     width: 100px;
+//     text-align: right;
+//     color: #8e8e8e;
+//   }
+//   dd {
+//     float: left;
+//     padding-left: 20px;
+//     input {
+//       width: 276px;
+//       height: 36px;
+//       line-height: 36px;
+//       padding: 0 10px;
+//       border-radius: 3px;
+//       border: 1px solid #bcbcbc;
+//     }
+//     textarea {
+//       font-size: 14px;
+//       line-height: 24px;
+//       width: 380px;
+//       height: 180px;
+//       padding: 10px;
+//       border-radius: 3px;
+//       resize: none;
+//     }
+//     a {
+//       display: block;
+//       padding-left: 10px;
+//       color: $btn-color;
+//       line-height: 24px;
+//       text-decoration: underline;
+//     }
+//     img {
+//       display: inline-block;
+//       padding: 0 10px;
+//       height: 36px;
+//       vertical-align: middle;
+//     }
+//     button {
+//       height: 38px;
+//       text-align: center;
+//       color: #fff;
+//       padding: 0 20px;
+//       background: $btn-color;
+//       border-radius: 3px;
+//       line-height: 38px;
+//     }
+//   }
+// }
+
+// =====================意见反馈 end=================
+// =====================个人设置=================
+// .personal-setting {
+//   height: 638px;
+//   padding-top: 60px;
+//   border: 1px solid #e9e9e9;
+//   dl {
+//     margin-bottom: 30px;
+//     font-size: 14px;
+//     line-height: 40px;
+//     color: #8e8e8e;
+//     overflow: hidden;
+//   }
+//   dt {
+//     float: left;
+//     width: 130px;
+//     text-align: right;
+//   }
+//   dd {
+//     position: relative;
+//     float: left;
+//     padding-left: 20px;
+//     .tel {
+//       display: inline-block;
+//       width: 135px;
+//       color: #3b3b3b;
+//     }
+//     input {
+//       height: 38px;
+//       width: 276px;
+//       padding: 0 10px;
+//       line-height: 38px;
+//       border: 1px solid #bcbcbc;
+//       border-radius: 3px;
+//     }
+//     i {
+//       display: block;
+//       line-height: 20px;
+//       color: #bebebe;
+//     }
+//     button {
+//       height: 36px;
+//       width: 158px;
+//       font-size: 14px;
+//       text-align: center;
+//       color: #fff;
+//       border-radius: 3px;
+//       background: #c4c4c4;
+//       line-height: 36px;
+//     }
+//     a {
+//       position: relative;
+//       display: inline-block;
+//       height: 80px;
+//       width: 80px;
+//       border: 1px solid #bcbcbc;
+//       border-radius: 50%;
+//       overflow: hidden;
+//       img {
+//         width: 100%;
+//       }
+//       span {
+//         position: absolute;
+//         left: 0;
+//         bottom: 0;
+//         height: 32px;
+//         width: 80px;
+//         font-size: 12px;
+//         background: rgba(0, 0, 0, 0.3);
+//         line-height: 24px;
+//         text-align: center;
+//         color: #fff;
+//       }
+//     }
+//   }
+//   .sex-chose {
+//     input {
+//       width: 18px;
+//       height: 18px;
+//       vertical-align: middle;
+//     }
+//     span {
+//       padding: 0 50px 0 10px;
+//     }
+//   }
+//   .confirm-btn {
+//     height: 40px;
+//     width: 124px;
+//     margin: 70px 0 0 262px;
+//     font-size: 14px;
+//     line-height: 40px;
+//     color: #fff;
+//     border-radius: 3px;
+//     background: $btn-color;
+//   }
+// }
+
+// 安全设置
+// .security-setting {
+//   display: none;
+// }
+
+// 编辑个人资料
+// .editor-userinfo {
+//   display: none;
+// }
+
+// 地址管理
+// .address-manage {
+//   font-size: 14px;
+//   border: 1px solid #e9e9e9;
+//   border-bottom: 0 none;
+//   table {
+//     width: 100%;
+//     text-align: center;
+//     table-layout: fixed;
+//   }
+//   td {
+//     border-bottom: 1px solid #e9e9e9;
+//   }
+//   thead {
+//     tr {
+//       height: 32px;
+//       line-height: 32px;
+//       background: #f8f8f8;
+//     }
+//   }
+//   tr {
+//     height: 105px;
+//   }
+//   .address-act {
+//     position: relative;
+//     a {
+//       display: block;
+//       text-align: center;
+//       line-height: 24px;
+//     }
+//     .set-default {
+//       color: $theme-color;
+//     }
+//     .default {
+//       color: #797979;
+//       cursor: text;
+//     }
+//   }
+//   .full-address {
+//     width: 225px;
+//   }
+// }
+
+// =====================个人设置 end=================
+
+
+
+// =====================租售意向单=================
+
+// .intention-thead {
+//     display: table;
+//     table-layout: fixed;
+//     width: 100%;
+//     height: 38px;
+//     border: 1px solid #e9e9e9;
+//     background: #f8f8f8;
+//     li {
+//       display: table-cell;
+//       font-size: 14px;
+//       color: #303030;
+//       text-align: center;
+//       line-height: 38px;
+//     }
+//     .pay-money{
+//         width: 22%;
+//      }
+// }
+// .intention-order-common{
+//     border: 1px solid #e9e9e9;
+//     overflow: hidden;
+//     .intention-title{
+//       height: 34px;
+//       line-height: 34px;
+//       border-bottom:1px solid #e9e9e9; 
+//       p{
+//         padding: 0 20px;
+//       }
+      
+//     }
+//     .cart-detail{
+//       border: none;
+//     }
+//     .intention-content-left{
+//       width: 80%;
+//       height: 362px;
+//       overflow-y: scroll;
+//       border-right: 1px solid #e9e9e9;
+//     }
+    
+// }
+// .intention-content-right{
+//     position: relative;
+//     width: 19%;
+//     height: 362px;
+//     .total-price{
+//         text-align: center;
+//         p{
+//             margin-top: 130px;
+//             padding: 0 28px;
+//             line-height: 24px;
+//         }
+//         span{
+//             line-height: 34px;
+//         }
+//         i{
+//             font-size: 20px;
+//         }
+//     }
+// }
+// .total-btns{
+//     position: absolute;
+//     bottom:20px;
+//     left: 20%;
+//     button{
+//       display: block;
+//       height: 28px;
+//       width: 100px;
+//       margin: 12px auto 0;
+//       background: $btn-color;
+//       border: 1px solid $btn-color;
+//       line-height: 28px;
+//       border-radius: 3px;
+//       color: #fff;
+//     }
+//     .bgc-white{
+//       background-color: #fff;
+//       border: 1px solid #e9e9e9;
+//       color: #303030;
+//     }
+// }
+
+
+
+
+// =====================租售意向单 end=================
+
+
+
+// =====================我的订单=================
+
+// 点击查看
+
+// .check-obligation-order{
+//     position: relative;
+//     height: 28px;
+//     font-size: 12px; 
+//     background: #ffdfc5;
+//     border:1px solid $btn-color;
+//     line-height: 28px;
+//   .icon-ling{
+//       font-size: 18px;
+//       color: $btn-color;
+//       line-height: 28px;
+//       vertical-align: top;
+//       margin: 0 10px;
+//   }
+//   .check-detail{
+//     display: inline-block;
+//     color: #303030;
+//     vertical-align: top;
+//     em{
+//       color: $btn-color;
+// 	    padding: 0 2px;
+//     }
+//   }
+//   .check-btn{
+//       display: block;
+//       color: #fff;
+//       background-color: $btn-color;
+//       width: 89px;
+//       line-height: 28px;
+//       text-align: center;
+//       .icon-fanye{
+//         display: inline-block;
+//         margin-left: 10px;
+//         font-size: 12px;
+//         transform: rotate(90deg);
+//       }
+//   }
+// }
+// .check-bomb-box{
+//     position: relative;
+//     position: absolute;
+//     left: 0;
+//     top: 40px;
+//     height: 328px;
+//     width: 864px;
+//     overflow: hidden;
+//     padding: 10px 20px;
+//     z-index: 10;
+//     background: #fff;
+//     border: 1px solid $btn-color;
+//     h2{
+//         font-size: 16px;
+//         font-weight:400;
+//     }
+//     ul{
+//       width: 200%;
+//       margin-top: 10px;
+//     }
+//     li{
+//       position: relative;
+//       float: left;
+//       height: 278px;
+//       width: 218px;
+//       border: 1px solid #eaeaea;
+//       box-shadow: 0 0 5px #d4d4d4;
+//       margin-right: 24px;
+//       h4{
+//           height: 32px;
+//           line-height: 32px;
+//           background: #f8f8f8;
+//           padding-left: 10px;
+//           font-weight: 400;
+//       }
+//       .btns{
+//         position: absolute;
+//         left: 10px;
+//         bottom:10px;
+//         display: block;
+//         font-size: 0;
+//         width: 200px;
+//         text-align: center;
+//       }
+//       button{
+//         display: inline-block;
+//         background: $btn-color;
+//         width: 62px;
+//         height: 22px;
+//         margin: 0 10px;
+//         line-height: 22px;
+//         color: #fff;
+//         border: 1px solid $btn-color;
+//       }
+//       .bgc-white {
+//           border:1px solid #e9e9e9;
+//           color: #4d4d4d;
+//           background: #fff;
+//       }
+//     }
+//     .bomb-box-list{
+//       padding: 0 10px;
+//       p{
+//         line-height: 30px;
+//       }
+//     }
+//     .icon-fanye{
+//       position: absolute;
+//       right: 0;
+//       top: 50%;
+//       margin-top: -25px;
+//       font-size: 12px;
+//       background: rgba(59, 59, 59, 0.6);
+//       color: #fff;
+//       height: 50px;
+//       width: 20px;
+//       line-height: 40px;
+//     }
+//     .icon-arrow-left{
+//       left:0;
+//       transform: rotate(180deg);
+//     }
+// }
+
+
+// 我的订单
+
+// .order-detail{
+//     border: 1px solid #e9e9e9;
+//     .order-detail-state{
+//       height: 64px;
+//       font-size: 12px;
+//       line-height: 32px;
+//       background: #454545;
+//       color: #fff;
+//       padding: 0 20px;
+//     }
+//     .order-detail-content{
+//       padding:0 20px;
+//         h2{
+//             font-size: 14px;
+//             line-height: 50px;
+//         }
+//         em{
+//           display: inline-block;
+//           height: 14px;
+//           width: 4px;
+//           background: $btn-color;
+//           margin-right: 5px;
+//           vertical-align: top;
+//           margin-top: 17px;
+//         }
+//         p{
+//           line-height: 24px;
+//           padding: 10px;
+//         }
+//     }
+// }
+// .product-detail{
+//     border: 1px solid #e9e9e9;
+//     margin-bottom: 50px;
+// }
+// .product-detail-title{
+//     overflow: hidden;
+//     display: table;
+//     width: 100%;
+//     table-layout: fixed;
+//     border-bottom: 1px solid #e9e9e9;
+//     li{
+//         display: table-cell;
+//         font-size: 14px;
+//         text-align: center;
+//         line-height: 34px;
+//         color: #303030;
+//         background: #f8f8f8;
+//     }
+//     .pay-ment{
+//       width: 22%;
+//     }
+    
+// }
+// .product-detail-content{
+//     overflow: hidden;
+//     .table-wrap{
+//         float: left;
+//         width: 80%;
+//         height: 362px;
+//         overflow-y: scroll; 
+//     }
+//     table{
+//         width: 100%;
+//         table-layout: fixed;
+//     }
+//     td{
+//         height: 120px;
+//         font-size: 12px;
+//         text-align: center;
+//         border-bottom:1px solid #e9e9e9;
+//         img{
+//             height: 98px;
+//             width: 98px;
+//             border: 1px solid #e9e9e9;
+//         }
+//     }
+//     .total-price{
+//         p{
+//             padding: 0 28px;
+//         }
+//     }
+// }
+
+
+
+
+// =====================我的订单 end=================
+
+
+
+// =====================退款售后=================
+
+// .refund-common {
+//   font-size: 14px;
+//   border: 1px solid #e9e9e9;
+//   border-bottom: 0 none;
+//   table {
+//     width: 100%;
+//     text-align: center;
+//     table-layout: fixed;
+//   }
+//   td {
+//     border-bottom: 1px solid #e9e9e9;
+//   }
+//   thead {
+//     tr {
+//       height: 32px;
+//       line-height: 32px;
+//       background: #f8f8f8;
+//     }
+//   }
+//   tr {
+//     height: 105px;
+//   }
+//   .acts{
+//       width: 20%;
+//   }
+//   p{
+//     text-align: left;
+//     width: 100px;
+//     padding-left:20px; 
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//   }
+//   .refund-btns{
+//       border-left:1px solid #e9e9e9;
+//       button{
+//           display: block;
+//           height: 28px;
+//           width: 100px;
+//           margin: 12px auto 0;
+//           background: $btn-color;
+//           border: 1px solid $btn-color;
+//           line-height: 28px;
+//           border-radius: 3px;
+//           color: #fff;
+//       }
+//   }
+// }
+
+
+// =====================退款售后 end=================
+
+
+
+
+// right end
+

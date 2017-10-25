@@ -27,9 +27,10 @@ export default {
       this.name = ''
       this.pwd = ''
     }),
-    bus.$on('topLogin', (data) => {
-      this.userInfo(data)
-    })
+    // bus.$on('topLogin', (data) => {
+    //   this.userInfo(data)
+		// }),
+		this.getUserInfo()
   },
   methods: {
     getUserInfo() {

@@ -13,34 +13,44 @@ export default {
       saleData: '',
       rentData: '',
       partsData: '',
-      curIndex: 0,
+      curIndex: this.state < 3? 0:1,
       timer1: null
     }
   },
   created() {
-		this.getLists()
+		this.getLists(1)
+		this.getLists(2)
+		this.getLists(3)
 		
-		bus.$on('add',(id) => {
-			this.addNumber(id)
+		bus.$on('add',({id,state}) => {
+			this.addNumber(id,state)
+		})
+		bus.$on('detail',({from,id,state,number}) => {
+			this.addNumber(id,state,number,from)
 		})
   },
   methods: {
-    addNumber(id) {
+    addNumber(id,state,number,from) {
       let productData
-      switch(this.state) {
+      switch(state) {
 				case 1:
-					productData = this.saleData
+					productData = this.rentData
 					break
 				case 2:
-					productData = this.rentData
+					productData = this.saleData
 					break
 				case 3:
 					productData = this.partsData
 					break
 			}
 			productData.list.forEach((item) => {
-				console.log(item.unifiedMerchandiseId)
 				if(item.unifiedMerchandiseId === id){
+					if(from == 'detail'){
+						item.number += number
+						item.sum += number*item.discount
+						productData.sum += number*item.discount
+						return
+					}
 					item.number++
 					item.sum += item.discount
 					productData.sum += item.discount
@@ -87,14 +97,14 @@ export default {
 
       this.cartAjax(item)
     },
-    getLists() {
+    getLists(type) {
       cart.list("post", {
         type: this.state,
         pageNum: 1,
         pageSize: 10
       }).then((res) => {
         let data = res.data
-        switch (this.state) {
+        switch (type) {
           case 1:
             this.saleData = data
             break

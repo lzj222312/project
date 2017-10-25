@@ -4,19 +4,24 @@
 <head>
   <meta>
   <title>挖掘机租赁列表</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app" v-cloak>
-    <top></top> 
-    <search></search> 
+    <top></top>
+    <search></search>
     <div class="main-content-w clearfix">
       <!--right-->
       <section>
-				<!--个人中心-->
-				<logstate></logstate>
-				<!--购物车中心-->
-				<minicart :state="state"></minicart>
+        <!--个人中心-->
+        <logstate></logstate>
+        <!--购物车中心-->
+        <minicart :state="state"></minicart>
       </section>
       <!--left  列表-->
       <div class="left-content mt13">
@@ -60,7 +65,7 @@
             <ul class="products-lists mt13">
               <!--租、售-->
               <li v-if="state<3" v-for="(item,index) in list">
-              	<a href="detail.html"><img :src="item.image"></a>   
+                <a :href="'detail.html?merchandiseId='+item.unifiedMerchandiseId+'&state='+state"><img :src="item.image"></a>
                 <div class="products-lists-item">
                   <h4>{{ item.name }}</h4>
                   <span>{{ item.desc }}</span>
@@ -82,7 +87,7 @@
               </li>
               <!--配件-->
               <li v-if="state===3" v-for="(item,index) in list">
-                <a href="detail.html"><img :src="item.image"></a> 
+                <a :href="'detail.html?merchandiseId='+item.unifiedMerchandiseId+'&state=3'"><img :src="item.image"></a>
                 <div class="products-lists-item">
                   <h4>{{ item.name }}</h4>
                   <div class="adaptation-situation">
@@ -100,8 +105,9 @@
           </div>
         </div>
       </div>
+      <pagination :total="total" :page-size="pageSize" :page-num="pageNum" @change="pageChange"></pagination>
     </div>
-    <foot></foot> 
+    <foot></foot>
   </div>
 </body>
 

@@ -17,7 +17,7 @@
 					<a href="index.html">
 						<i class="icon-Home"></i>首页</a> | </li>
 				<li>
-					<a href="javascript:;">
+					<a href="personal.html">
 						<i class="icon-geren"></i>个人中心</a> | </li>
 				<li>
 					<a href="javascript:;">

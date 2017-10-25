@@ -61,7 +61,7 @@
             <!-- 配件推荐 -->
             <ul class="accessories-recommendation-item mt13">
               <li v-for="(item,index) of partsList" :key="index">
-                <a href="javascript:;">
+                <a :href="'detail.html?merchandiseId='+item.merchandiseId+'&state=3'">
                   <img :src="item.image"  alt="配件推荐商品">
                   <p>{{ item.name }}</p>
                   <span><i>{{ item.discount }}</i>元</span>
@@ -77,7 +77,7 @@
           <ul class="recommendation-content-left">
             <li class="mt13" v-for="(item,index) of excavatorList" :key="index">
               <span class="hot-logo" v-if="item.isHot">热卖</span>
-              <a href="javascript:;">
+              <a :href="'detail.html?merchandiseId='+item.merchandiseId+'&state='+item.businessType">
 								<img :src="item.image" style="width:745px;height:292px;">
               </a>
               <!-- 租 -->
@@ -89,11 +89,11 @@
                   <dd>{{ item.weight }}吨</dd>
                 </dl>
                 <dl>
-                  <dt v-if="item.businessType === 2">租金：</dt>
-                  <dt v-if="item.businessType === 1">金额：</dt>
-                  <dd v-if="item.businessType === 2" class="ftheme-color"><i>{{ item.discount }}</i>元/月</dd>
-                  <dd v-if="item.businessType === 1" class="ftheme-color"><i>{{ item.discount }}</i>元</dd>
-                  <dd class="special" v-if="item.businessType === 2">(3个月起租)</dd>
+                  <dt v-if="item.businessType === 1">租金：</dt>
+                  <dt v-if="item.businessType === 2">金额：</dt>
+                  <dd v-if="item.businessType === 1" class="ftheme-color"><i>{{ item.discount }}</i>元/月</dd>
+                  <dd v-if="item.businessType === 2" class="ftheme-color"><i>{{ item.discount }}</i>元</dd>
+                  <dd class="special" v-if="item.businessType === 1">(3个月起租)</dd>
                 </dl>
                 <div class="recommendation-rent-detail">
                   <div class="recommendation-rent-num">
@@ -103,14 +103,14 @@
                       <a href="javascript:;"><i class="icon-jia" @click="addNum('buyNum',item)"></i></a>
                       <em>辆</em>
                     </div>
-                    <div class="num" v-if="item.businessType === 2">
+                    <div class="num" v-if="item.businessType === 1">
                       <a href="javascript:;"><i class="icon-jian" @click="reduceNum('month',item)"></i></a>
                       <input type="text" :value="item.month" disabled>
                       <a href="javascript:;"><i class="icon-jia" @click="addNum('month',item)"></i></a>
                       <em>月</em>
                     </div>
                   </div>
-                  <button>加入购物车</button>
+                  <button @click="add(item)">加入购物车</button>
                 </div>
               </div>
             </li>
