@@ -55,7 +55,10 @@ export default {
 		},
 		changeSelect(index){
 			this.selectIndex = index
-			this.$router.push(this.tabs[this.tabIndex].path)
+			this.$router.push({
+				path: this.tabs[this.tabIndex].path,
+				query: {index: this.selectIndex + 1}
+			})
 		}
 	}
 }
