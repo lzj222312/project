@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>提交</title>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <top></top>
+    <search></search>
+    <div class="main-content-w clearfix">
+      <ul class="crumbs-nav">
+        <li>1.{{typestr}}</li>
+        <li class='current'>2.{{state}}</li>
+        <li>3.提交完成</li>
+      </ul>
+      <!--选择收货地址-->
+      <h2 class="submit-order-title">选择收货地址</h2>
+      <div class="address-detail clearfix">
+        <dl class="float-l">
+          <dt>{{add.name}}</dt>
+          <dd class="tel">{{add.mobile}}</dd>
+          <dd>{{add.province}}{{add.city}}{{add.district}}</dd>
+          <dd>{{add.address}}</dd>
+        </dl>
+        <button class="use-new-address-btn float-r">使用新地址</button>
+        <button class="other-address-btn float-r">其他地址</button>
+      </div>
+      <!--开具发票-->
+      <!--只有配件有开具发票-->
+      <template v-if='type == 3'>
+        <h2 class="submit-order-title">开具发票</h2>
+        <div class="innvoice-detail">
+          <dl>
+            <dt>是否开具发票</dt>
+            <dd>
+              <input type="radio" value='2' name="no" checked v-model='mode'>不需要
+            </dd>
+            <dd>
+              <input type="radio" value='1' name="yse"  v-model='mode'>需要
+            </dd>
+          </dl>
+          <!--当发票为需要的时候才会出现这块-->
+          <div class="innvoice-detail-import" v-if='mode==1'>
+            <dl>
+              <dt>发票抬头：</dt>
+              <dd>
+                <input type="text" placeholder="请输入发票抬头" v-model='head'>
+              </dd>
+            </dl>
+            <dl>
+              <dt>发票内容：</dt>
+              <dd>
+                <input type="text" placeholder="请输入发票内容" v-model='content'>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </template>
+      <!--挖掘机列表-->
+      <h2 class="submit-order-title">挖掘机列表</h2>
+      <div class="product-detail">
+        <template v-if='type == 1'>
+          <ul class="product-detail-title">
+            <li>缩略图</li>
+            <li>挖掘机名</li>
+            <li>型号</li>
+            <li>月租价（元）</li>
+            <li>数量（辆）</li>
+            <li>租赁月数</li>
+            <li>金额（元）</li>
+            <li>支付金额（元）</li>
+          </ul>
+          <div class="product-detail-content">
+            <div class="table-wrap">
+              <table>
+                <tr v-for="list in lists">
+                  <td><img :src="list.image" alt=""></td>
+                  <td>{{list.name}}</td>
+                  <td>{{list.model}}</td>
+                  <td>¥{{list.discount}}</td>
+                  <td>{{list.number}}</td>
+                  <td>{{list.month}}</td>
+                  <td class="fbtn-color">¥{{list.countDiscount}}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="total-price">
+              <span class="fbtn-color">合计：<i>¥{{preData.sum}}</i></span>
+            </div>
+            <button class="submit-btn" @click='submit'>提交意向单</button>
+          </div>
+        </template>
+        <template v-if='type == 2'>
+          <ul class="product-detail-title">
+            <li>缩略图</li>
+            <li>挖掘机名</li>
+            <li>型号</li>
+            <li>单价(元)</li>
+            <li>数量(辆)</li>
+            <li>金额(元)</li>
+            <li>支付金额(元)</li>
+          </ul>
+          <div class="product-detail-content">
+            <div class="table-wrap">
+              <table>
+                <tr v-for="list in lists">
+                  <td><img :src="list.image" alt=""></td>
+                  <td>{{list.name}}</td>
+                  <td>{{list.model}}</td>
+                  <td>¥{{list.discount}}</td>
+                  <td>{{list.number}}</td>
+                  <td class="fbtn-color">¥{{list.countDiscount}}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="total-price">
+              <span class="fbtn-color">合计：<i>¥{{preData.sum}}</i></span>
+            </div>
+            <button class="submit-btn" @click='submit'>提交意向单</button>
+          </div>
+        </template>
+        <template v-if='type == 3'>
+          <ul class="product-detail-title">
+            <li>缩略图</li>
+            <li>配件名称</li>
+            <li>适配挖掘机</li>
+            <li>单价(元)</li>
+            <li>数量(件)</li>
+            <li>金额（元）</li>
+            <li>支付金额（元）</li>
+          </ul>
+          <div class="product-detail-content">
+            <div class="table-wrap">
+              <table>
+                <tr v-for="list in lists">
+                  <td><img :src="list.image" alt=""></td>
+                  <td>{{list.name}}</td>
+                  <td>适配</td>
+                  <td>¥{{list.discount}}</td>
+                  <td>{{list.number}}</td>
+                  <td class="fbtn-color">¥{{list.countDiscount}}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="total-price">
+              <p>(运费¥{{preData.postage}})</p>
+              <span class="fbtn-color">合计：<i>¥{{preData.sum}}</i></span>
+            </div>
+            <button class="submit-btn" @click='submit'>提交订单</button>
+          </div>
+        </template>
+      </div>
+    </div>
+    <foot></foot>
+  </div>
+</body>
+
+</html>

@@ -79,7 +79,7 @@
             </div>
             <div class="btns">
               <button @click='addCart'>加入购物车</button>
-              <button>直接申请</button>
+              <button @click="goApply">直接申请</button>
             </div>
           </div>
           <div class="products-details" v-if='state===3'>
@@ -118,7 +118,7 @@
             </div>
             <div class="btns">
               <button @click='addCart'>加入购物车</button>
-              <button>直接申请</button>
+              <button @click="goApply">直接申请</button>
               <span><i class='icon-like' :class="{'collected':isCollect}" @click='collect'></i>{{isCollect?"已收藏":"未收藏"}}</span>
             </div>
           </div>

@@ -3,6 +3,7 @@
  import {
    Message
  } from 'element-ui'
+ import Order from 'js/orderServer.js'
 
  export default {
    name: 'cart',
@@ -56,8 +57,8 @@
          })
 
          this.listsData = data
-				 this.lists = data.list
-				 this.total = data.total
+         this.lists = data.list
+         this.total = data.total
        })
      },
      add(data) {
@@ -159,14 +160,22 @@
        })
      },
      pageChange(pageNum) {
-			 this.pageNum = pageNum
-			 this.getLists()
+       this.pageNum = pageNum
+       this.getLists()
      },
      changeNum(page) {
 
      },
      goApply() {
+       let isCheckList = this.lists.filter(item => {
+         return item.isSelected
+       })
 
+       if (!isCheckList.length) {
+         Message("请选择所需商品")
+         return
+       }
+       Order.toOrder(isCheckList, this.selectIndex,this.sum)
      },
    },
    watch: {

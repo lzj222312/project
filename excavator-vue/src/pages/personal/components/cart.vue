@@ -52,7 +52,7 @@
 					</table>
 					<div class="cart-bottom">
 						<div class="float-l">
-							<span><input type="checkbox" class="cart-checkbox" name="cart-checked" v-model='allSelected'>全选</span>
+							<span><input type="checkbox" class="cart-checkbox" name="cart-checked" v-model='allSelected' @change="toggleAll">全选</span>
 							<a href="javascript:;" @click='remove()'>
 								<i class="icon-delete"></i>删除</a>
 						</div>

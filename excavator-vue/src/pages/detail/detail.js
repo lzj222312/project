@@ -8,6 +8,7 @@ import Minicart from 'components/minicart/minicart.vue'
 import { Message } from 'element-ui'
 import Utils from 'js/utils.js'
 import bus from 'js/bus.js'
+import Order from 'js/orderServer.js'
 
 import { fetch, rap } from 'js/fetch.js'
 let url = {
@@ -101,7 +102,11 @@ new Vue({
     },
     addCart() {
 			bus.$emit('detail',{from:'detail',number:this.number,id:this.id,state:this.state})
-    },
+		},
+		goApply(){
+			let preData = {unifiedMerchandiseId: this.id,number: this.number,month: this.month}
+			Order.toOrder([preData],this.state,this.countMoney)
+		}
   },
   components: {
     Top,

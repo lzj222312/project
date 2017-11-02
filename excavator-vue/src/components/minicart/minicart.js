@@ -5,6 +5,7 @@ import {
 
 import cart from 'js/cartServer.js'
 import bus from 'js/bus.js'
+import Order from 'js/orderServer.js'
 
 export default {
   props: ['state'],
@@ -131,6 +132,21 @@ export default {
           Message(res.message)
         })
       }, 1000)
-    }
+		},
+		goApply(){
+			let lists
+			switch(this.state){		
+				case 1:
+					lists = this.rentData
+					break
+				case 2:
+					lists = this.saleData
+					break
+				case 3:
+					lists = this.partsData
+			}
+			
+			Order.toOrder(lists.list,this.state,lists.sum)
+		}
   }
 }

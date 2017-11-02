@@ -1,0 +1,420 @@
+@import "../../modules/icon/style.css";
+@import "../../modules/sass/variables.scss";
+
+[v-cloak] {
+  display: none;
+}
+
+
+// 面包屑导航
+.crumbs-nav{
+    overflow: hidden;
+    li{
+        position: relative;
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        background: #dcdcdc;
+        width: 33.3%;
+        text-align: center;
+        &:before{
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: "";
+            border-left: 20px solid #dcdcdc;
+            border-top: 16px solid #fff;
+            border-bottom: 16px solid #fff;
+        }
+        &:after{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            border-left: 16px solid #fff;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+        }
+        &:first-child{
+            &:after{
+                display: none;
+            }
+        }
+        &:last-child{
+            &:before{
+                display: none;
+            }
+        }
+    }
+    .current {
+        color: $theme-color;
+    }
+
+}
+
+
+// 标题栏
+
+.submit-order-title{
+    position: relative;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #454545;
+    line-height: 40px;
+    &:before{
+        position: absolute;
+        left: 5px;
+        top: 13px;
+        display: block;
+        content: "";
+        overflow: hidden;
+        height: 14px;
+        width: 4px;
+        background: $btn-color;
+    }
+}
+
+// 按钮
+
+button{
+    height: 36px;
+    width: 90px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background: $btn-color;
+    line-height: 36px;
+}
+.submit-btn{
+
+}
+.use-new-address-btn{
+    margin-right: 80px;
+}
+.other-address-btn{
+    margin-right: 20px;
+}
+
+// 选择收货地址
+
+.address-detail{
+    dl{
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 40px;
+        font-size: 12px;
+        overflow: hidden;
+        line-height: 40px;
+        &:before{
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            display: block;
+            content: "";
+            height: 10px;
+            width: 10px;
+            background: $theme-color;
+            border-radius: 50%;
+        }
+    }
+    dt{
+        float: left;
+        margin-right: 40px;
+        font-weight:700;
+    }
+    dd{
+        float: left;
+        margin-right: 20px;
+    }
+    .tel{
+        font-weight:700;
+        margin-right: 40px;
+    }
+}
+// 其他地址列表
+.other-address-lists{
+    margin: 20px 0;
+    table{
+        width: 100%;
+        border: 1px solid #e9e9e9;
+        border-bottom: none;
+        }
+    td{
+        height: 54px;
+        line-height: 54px;
+        text-align: center;
+        border-bottom: 1px solid #e9e9e9;
+    }
+    thead{
+        td{
+            height: 34px;
+            line-height: 34px;
+            color: #303030;
+            background: #f8f8f8;
+        }
+    }
+    input[type="radio"]{
+        -webkit-appearance: initial;
+        -moz-appearance: initial;
+        -ms-appearance: initial;
+        -o-appearance: initial;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #7a7a7a;
+        border-radius: 50%;
+        vertical-align: top;
+        margin-top: 21px;
+    }
+    input[type="radio"]:checked{
+        background: $theme-color;
+        border: none;
+    }
+    a{
+        padding: 0 5px;
+    }
+}
+.set-default {
+    color: $theme-color;
+}
+.default {
+    color: #797979;
+    cursor: text;
+}
+.btn-content{
+    margin-top: 30px;
+    text-align: right;
+    button{
+        margin: 0 10px;
+        height: 36px;
+        width: 90px;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        background: $btn-color;
+        line-height: 36px;
+    }
+    .cancel-btn{
+        background-color: #fff;
+        color: #404040;
+        border: 1px solid #e9e9e9;
+    }
+}
+
+// 使用新地址
+
+.use-new-address{
+    width: 1100px;
+    text-align: left;
+    dl{
+        overflow: hidden;
+        display: inline-block;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    dt{
+        float: left;
+        width: 100px;
+        text-align: right;
+        line-height: 32px;
+    }
+    dd{
+        float: left;
+    }
+    input{
+        width: 200px;
+        height: 30px;
+        padding: 0 9px;
+        border: 1px solid #e9e9e9;
+        line-height: 30px;
+    }
+
+    .province-choice{
+        width: 1100px;
+        select{
+            height: 30px;
+            width: 148px;
+            margin-right: 10px;
+            padding-left: 10px;
+            color: #454545;
+            border: 1px solid #e9e9e9;
+        }
+        input{
+            width: 494px;
+            height: 30px;
+        }
+    }
+    .set-default-choice{
+        text-align: right;
+        line-height: 40px;
+        input{
+            -webkit-appearance: initial;
+            -moz-appearance: initial;
+            -ms-appearance: initial;
+            -o-appearance: initial;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            padding: 0;
+            border: 1px solid #7a7a7a;
+            vertical-align: top;
+            margin-top: 13px;
+            margin-right: 10px;
+        }
+        input[type="checkbox"]:checked{
+            border: none;
+            background: url(imgs/Icon-square-tick.png) no-repeat center;
+        }
+    }
+}
+
+.btn-content{
+    margin-top: 30px;
+    text-align: right;
+    button{
+        margin: 0 10px;
+        height: 36px;
+        width: 90px;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        background: $btn-color;
+        line-height: 36px;
+    }
+    .cancel-btn{
+        background-color: #fff;
+        color: #404040;
+        border: 1px solid #e9e9e9;
+    }
+}
+
+
+// 开具发票
+
+.innvoice-detail{
+    position: relative;
+    height: 100px;
+    dl{
+        overflow: hidden;
+        line-height: 50px;
+    }
+    dt{
+        float: left;
+        padding: 0 15px;
+    }
+    dd{
+        float: left;
+        padding: 0 10px;
+        input[type="radio"]{
+            -webkit-appearance: initial;
+            -moz-appearance: initial;
+            -ms-appearance: initial;
+            -o-appearance: initial;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            background: url(imgs/Icon-circle.png) no-repeat center;
+            vertical-align: top;
+            margin-top: 16px;
+        }
+        input[type="radio"]:checked{
+            background: url(imgs/Icon-circle-dot.png) no-repeat center;
+        }
+
+    }
+    .innvoice-detail-import{
+        position: absolute;
+        left: 300px;
+        top: 0;
+        dl{
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            color: #454545;
+        }
+        dt{
+            padding: 0;
+        }
+        input{
+            border: 0 none;
+            width: 250px;
+            padding: 5px;
+            border: 1px solid #e9e9e9;
+        }
+    }
+}
+
+// 叉车列表
+
+.product-detail{
+    border: 1px solid #e9e9e9;
+    margin-bottom: 50px;
+}
+.product-detail-title{
+    overflow: hidden;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #e9e9e9;
+    li{
+        display: table-cell;
+        font-size: 14px;
+        text-align: center;
+        line-height: 34px;
+        color: #303030;
+        background: #f8f8f8;
+    }
+
+}
+.product-detail-content{
+    position: relative;
+    overflow: hidden;
+    .table-wrap{
+        float: left;
+        width: 87%;
+        height: 362px;
+        overflow-y: scroll;
+    }
+    table{
+        width: 100%;
+        table-layout: fixed;
+    }
+    td{
+        height: 120px;
+        font-size: 12px;
+        text-align: center;
+        border-bottom:1px solid #e9e9e9;
+        img{
+            height: 98px;
+            width: 98px;
+            border: 1px solid #e9e9e9;
+        }
+    }
+    .submit-btn{
+        display: block;
+        position: absolute;
+        right: 30px;
+        bottom:30px;
+        background: $btn-color;
+    }
+    .total-price{
+        float: right;
+        width: 150px;
+        margin-top: 130px;
+        text-align: center;
+        p{
+            padding: 0 20px;
+            line-height: 24px;
+        }
+        span{
+            line-height: 34px;
+        }
+        i{
+            font-size: 20px;
+        }
+    }
+
+}
