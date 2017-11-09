@@ -15,7 +15,7 @@ tabs.forEach((item) => {
 })
 
 let router = new Router({
-	mode: 'history',
+	// mode: 'history',
   routes
 })
 

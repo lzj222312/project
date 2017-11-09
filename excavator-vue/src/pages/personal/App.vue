@@ -14,7 +14,7 @@
 					<a href="javascript:;">
 						<i :class="'icon-'+item.tabClass"></i>{{ item.tabName }}</a>
 					<ul class="left-subnav" v-show="index === tabIndex">
-						<li :class="{'select': index === selectIndex}" v-for="(item,index) in item.lists" :key="index" @click="changeSelect(index)">
+						<li :class="{'select': index === selectIndex}" v-for="(item,index) in item.lists" :key="index" @click.stop="changeSelect(index)">
 							<a href="javascript:;">{{ item }}
 								<i class="icon-fanye"></i>
 							</a>
@@ -26,7 +26,7 @@
 		<!--right-->
 		<div class="mt13 right-content">
 			<!-- 路由切换 -->
-			<router-view></router-view>
+			<router-view v-if="!(selectIndex <= -1)"></router-view>
 		</div>
 	</div>
 </template>
@@ -48,16 +48,24 @@ export default {
 		bus.$on('topLogin', (data) => {
 			this.user = data.data.user
 		})
+
+		let path = location.host
+		console.log(path)
+		
+		this.$router.push({
+			path: this.tabs[this.tabIndex].path
+		})
 	},
 	methods: {
-		changeTab(index){
+		changeTab(index) {
 			this.tabIndex = index
+			this.selectIndex = -1
 		},
-		changeSelect(index){
+		changeSelect(index) {
 			this.selectIndex = index
 			this.$router.push({
 				path: this.tabs[this.tabIndex].path,
-				query: {index: this.selectIndex + 1}
+				query: { index: this.selectIndex + 1 }
 			})
 		}
 	}
