@@ -49,12 +49,19 @@ export default {
 			this.user = data.data.user
 		})
 
-		let path = location.host
-		console.log(path)
+		let pathData = location.href.split('#/')[1]
+		if(pathData){
+			let path = pathData.split('?')
+			this.tabIndex = tabs.findIndex((item) => {
+          return item.path == path[0]
+			})
+			this.selectIndex = parseInt(path[1].split('=')[1])
+		}
 		
 		this.$router.push({
-			path: this.tabs[this.tabIndex].path
-		})
+				path: this.tabs[this.tabIndex].path,
+				query: { index: this.selectIndex }
+			})
 	},
 	methods: {
 		changeTab(index) {

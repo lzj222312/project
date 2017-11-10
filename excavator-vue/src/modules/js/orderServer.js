@@ -2,7 +2,12 @@ import { fetch,rap } from './fetch'
 
 let url = {
 	commit: '/order/commit.do',
-	preorder:	'/order/preorder.do'
+	preorder:	'/order/preorder.do',
+	intentionlists: '/intention/lists.do',
+  orderLists: '/order/lists.do',
+  delete: '/order/delete.do',
+  cancel: '/order/cancel.do',
+  sign: '/order/sign.do'
 }
 
 url = rap(url)
@@ -14,6 +19,26 @@ class	Order{
 
 	static preorder(moted="get",data){
 		return fetch(moted,url.preorder,data)
+	}
+
+	static intentionlists(moted="get",data){
+		return fetch(moted,url.intentionlists,data)
+	}
+
+	static orderLists(moted="get",data){
+		return fetch(moted,url.orderLists,data)
+	}
+
+	static delete(moted="get",data){
+		return fetch(moted,url.delete,data)
+	}
+
+	static cancel(moted="get",data){
+		return fetch(moted,url.cancel,data)
+	}
+
+	static sign(moted="get",data){
+		return fetch(moted,url.sign,data)
 	}
 
 	static toOrder(lists,type,sum){

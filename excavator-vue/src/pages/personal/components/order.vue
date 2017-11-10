@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="cart-common mt13">
+		<div class="cart-common mt13" v-if="lists&&lists.length">
 			<ul class="intention-thead">
 				<li>缩略图</li>
 				<li>配件名</li>
@@ -14,7 +14,7 @@
 			<div class="intention-order-common mt13" v-for="(item,index) in lists" :key="index">
 				<div class="intention-title">
 					<p class="float-l">订单编号：{{item.orderNumber}}
-						<i class="fbtn-color" v-if='index === 0'>({{item.stateStr}})</i>
+						<i class="fbtn-color">({{item.stateStr}})</i>
 					</p>
 					<p class="float-r">下单时间：{{item.timeStr}}</p>
 				</div>
@@ -28,9 +28,9 @@
 										<img :src="list.image" alt="">
 									</div>
 								</td>
-								<td class="list-name">{{list.name}}</td>
+								<!-- <td class="list-name">{{list.name}}</td> -->
 								<td>
-									<p v-for="(adapte,index) in list.adapterForkliftType" :key="index">{{adapte}}</p>
+									<p>{{list.adapterForkliftType}}</p>
 								</td>
 								<td>¥{{list.discount}}</td>
 								<td>{{list.number}}</td>
@@ -65,7 +65,12 @@
 					</div>
 				</div>
 			</div>
-			<pagination :total="50" :display="5" :page-size="pageSize" :page-num="pageNum" @change="change"></pagination>
+			<pagination v-if="lists&&lists.length" :total="total" :page-size="pageSize" :page-num="pageNum" @change="pageChange"></pagination>
+		</div>
+		<div class="cart-empty" v-else>
+			<h2>
+				<i class="icon-IconCart"></i>您的意向单为空!</h2>
+			<button @click='goIndex'>返回首页</button>
 		</div>
 	</div>
 </template>
@@ -392,6 +397,8 @@ input[name="cart-checked"]:checked {
 
 
 
+
+
 /*流程走向*/
 
 .review-process {
@@ -603,6 +610,8 @@ input[name="cart-checked"]:checked {
 
 
 
+
+
 /*弹框*/
 
 
@@ -683,6 +692,8 @@ input[name="cart-checked"]:checked {
 		border: 1px solid #e9e9e9;
 	}
 }
+
+
 
 
 

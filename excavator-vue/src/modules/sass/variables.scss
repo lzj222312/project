@@ -75,3 +75,35 @@ a:hover{
 a:active{
     text-decoration:none;
 }
+
+.cart-empty {
+	margin-top: 120px;
+	h2 {
+		font-size: 35px;
+		color: #7a7a7a;
+		font-weight: 400;
+		line-height: 250px;
+		text-align: center;
+		i {
+			display: inline-block;
+			padding: 0 30px;
+			font-size: 74px;
+			line-height: 250px;
+			vertical-align: middle;
+			color: #b7b7b7;
+		}
+	}
+	button {
+		display: block;
+		width: 176px;
+		margin: 0 auto;
+		font-size: 14px;
+		height: 36px;
+		line-height: 36px;
+		color: #fff;
+		background: $btn-color;
+		text-align: center;
+		border-radius: 3px;
+		letter-spacing: 10px;
+	}
+}
