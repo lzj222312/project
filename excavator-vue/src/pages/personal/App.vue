@@ -49,6 +49,7 @@ export default {
 			this.user = data.data.user
 		})
 
+		//刷新定位刷新前的地址
 		let pathData = location.href.split('#/')[1]
 		if(pathData){
 			let path = pathData.split('?')
